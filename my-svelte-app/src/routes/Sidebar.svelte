@@ -16,7 +16,7 @@
 </script>
 
 {#if isOpen}
-  <div class="sidebar">
+  <div class="sidebar" class:closed={!isOpen}>
     <button class="sidebar__button sidebar__button_close" on:click={toggleSidebar}><img class="sidebar__close" src="{close}" alt="Close" /></button>
     <slot />
   </div>

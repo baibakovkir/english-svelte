@@ -45,7 +45,7 @@
 		section {
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: start;
 			align-items: center;
 			min-height: 100vh;
 			background-color: #f8f8f8;
@@ -149,17 +149,6 @@
 			align-items: baseline;
 		}
 
-		ul:has(li):has(form) {
-			list-style: none;
-			padding: 0;
-		}
-
-		li form {
-			flex-direction: row;
-			gap: 0.5rem;
-			margin: 0.5rem 0;
-		}
-
 		nav {
 			position: relative;
 			display: flex;
@@ -177,11 +166,6 @@
 
 		nav a[aria-current='true'] {
 			border-bottom: 2px solid;
-		}
-
-		ul:has(form) {
-			list-style: none;
-			padding: 0;
 		}
 
 		progress {
@@ -206,49 +190,6 @@
 			font-size: 0.9em;
 			padding: 0.15rem 0.3rem;
 			border-radius: var(--border-radius);
-		}
-
-		ul.todos {
-			padding: 0;
-		}
-
-		ul.todos li:not(:has(> form)),
-		ul.todos li form {
-			position: relative;
-			display: flex;
-			align-items: center;
-			padding: 0.5em 0.5em 0.5em 1em;
-			margin: 0 0 0.5em 0;
-			gap: 0.5em;
-			border-radius: 5px;
-			user-select: none;
-			background: var(--bg-1);
-			filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.1));
-			transition: filter 0.2s, opacity 0.2s;
-		}
-
-		ul.todos .done {
-			filter: none;
-			opacity: 0.4;
-		}
-
-		ul.todos button {
-			border: none;
-			background-color: transparent;
-			background-repeat: no-repeat;
-			background-position: 50% 50%;
-			background-size: 1rem 1rem;
-			cursor: pointer;
-			width: 3em;
-			height: 3em;
-			margin: -0.5em -0.5em -0.5em 0;
-			aspect-ratio: 1;
-			opacity: 0.5;
-			transition: opacity 0.2s;
-		}
-
-		ul.todos button:hover {
-			opacity: 1;
 		}
 
 		body.dark {

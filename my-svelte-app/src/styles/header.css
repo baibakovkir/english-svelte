@@ -1,6 +1,6 @@
 .header__logo {
-  width: 20px;
-  height: 20px;
-  background-color: #90AA86;
+  max-width: 30px;
+  max-height: 30px;
+  background-color: transparent;
   padding: 5px;
 }

@@ -1,4 +1,11 @@
-.grammar {
-  position: relative;
-  z-index: 2;
+
+.grammar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+  justify-content: start;
 }
