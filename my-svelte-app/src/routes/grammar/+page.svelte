@@ -2,6 +2,7 @@
   import Sidebar from '../Sidebar.svelte';
   export let data;
 </script>
+
 <Sidebar>
   <ul>
     {#each data.summaries as { slug, title }}
@@ -9,6 +10,7 @@
     {/each}
   </ul>
 </Sidebar>
+
 <section class="grammar">
   <h1>Грамматика</h1>
   <div class="initial__box">
