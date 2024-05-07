@@ -1,0 +1,11 @@
+.video {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.video__iframe {
+  height: 80%;
+  width: 80%;
+}

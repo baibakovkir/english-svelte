@@ -1,0 +1,31 @@
+.initial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+.initial__title {
+  color: #333;
+  font-size: 64px;
+  margin: 0;
+}
+.initial__about {
+  margin-top: 100px;
+  max-width: 1200px;
+}
+.initial__box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+}
+
+.initial__text {
+  max-width: 1200px;
+}

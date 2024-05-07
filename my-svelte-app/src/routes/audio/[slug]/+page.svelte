@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   export let data;
   import { onMount, onDestroy } from 'svelte';
   import { Howl, Howler } from 'howler';
-  import audio from '$lib/audios/test.mp3';
+
 
   let isPlaying = false;
   let volume = 0.5; // Initial volume
@@ -10,7 +10,7 @@
   let currentTime = 0;
 
   const sound = new Howl({
-    src: [audio],
+    src: [data.post.link],
     html5: true,
     volume: volume,
     onplay: () => {

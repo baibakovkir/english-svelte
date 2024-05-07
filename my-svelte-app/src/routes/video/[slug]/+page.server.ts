@@ -8,6 +8,6 @@ export async function load({ params }: { params: { slug: string } }) {
   if (!post) {
     throw error(404, 'Not found');
   }
-  const link = post.link;
-  return ({ post, link });
+
+  return ({ post });
 }

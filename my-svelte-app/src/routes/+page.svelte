@@ -1,5 +1,4 @@
 <script>
-  import '../styles/index.css';
     // Your component logic here
 </script>
 <section class="initial">

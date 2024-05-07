@@ -1,0 +1,11 @@
+.text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.text__pdf {
+  height: 100%;
+  width: 100%;
+}
