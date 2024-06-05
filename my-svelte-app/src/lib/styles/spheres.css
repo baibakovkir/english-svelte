@@ -1,0 +1,11 @@
+.spheres {
+  background-image: url(../assets/spheres.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0;
+}
+.spheres__text {
+  color: #f3f3f3;
+  margin: 50px 0;
+}

@@ -1,10 +1,19 @@
+body {
+  margin: 0;
+}
+
 .initial {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 140px);
   background-color: #f8f8f8;
+  margin: 0;
+}
+
+.initial__text {
+  margin: 0;
 }
 .initial__title {
   color: #333;
@@ -55,7 +64,7 @@
   filter: none; /* Remove the black and white filter on hover */
 }
 
-.initial__box:hover p {
+.initial__box:hover .initial__box__text_yellow {
   color: #eb5e28;
 }
 

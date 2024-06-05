@@ -2,4 +2,5 @@
 @import url(./initial.css);
 @import url(./grammar.css);
 @import url(./video.css);
-
+@import url(./normalize.css);
+@import url(./spheres.css);

@@ -6,6 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"build-storybook": "build-storybook",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
@@ -15,6 +16,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
+		"svelte-mui": "^0.5.10",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
@@ -22,6 +24,8 @@
 	"type": "module",
 	"dependencies": {
 		"howler": "^2.2.4",
-		"nltk": "^0.0.1"
+		"init": "^0.1.2",
+		"nltk": "^0.0.1",
+		"svelte-forms": "^2.3.1"
 	}
 }
