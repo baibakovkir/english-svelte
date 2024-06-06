@@ -9,3 +9,15 @@
   color: #f3f3f3;
   margin: 50px 0;
 }
+.spheres__input{
+  width: 500px;
+}
+.spheres__input::placeholder {
+  text-align: start;
+}
+
+@media screen and (max-width: 768px) {
+  .spheres__input{
+    width: 100%;
+  }
+}

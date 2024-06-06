@@ -1,8 +1,8 @@
 <script>
-    // You can add any logic or import statements here
+    const year = new Date().getFullYear();
 </script>
 
 <footer>
-    <p>&copy; 2024 Госсорткомиссия
+    <p>&copy; {year} baibakovkir dev
     </p>
 </footer>

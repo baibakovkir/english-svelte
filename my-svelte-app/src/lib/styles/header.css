@@ -1,0 +1,91 @@
+.header {
+  width: 100%;
+  display: flex;
+}
+.header__nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
+}
+.header__menu {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.header__button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    justify-content: space-between;
+    min-height: 75px;
+
+  }
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 130vh;
+    padding: 0;
+    background-color: #f8f8f8;
+    overflow: hidden; 
+  }
+  .header__menu_active {
+    display: flex;
+  }
+
+  .header__button {
+    display: block;
+    background: none;
+    width: 30px;
+    height: 30px;
+    border: none;
+  }
+
+  .header__button_inactive {
+    display: none;
+  }
+  
+  .header__button__burger {
+    background-image: url(../assets/burger-menu.svg);
+    background-size: contain;
+  }
+
+  .header__button__close {
+    background-image: url(../assets/close-bold.svg);
+    background-size: contain;
+    margin-top: 100px;
+  }
+  
+  .header__menu__item {
+    margin-top: 70px;
+  }
+
+  .header__link {
+    font-size: 24px;
+  }
+
+}
+
+/* 
+<div class="header">
+  <nav class="header__nav nav_burger">
+    <div class="nav_burger_bg"></div>
+    <a class="header__link" href="/"><img class="header__logo" src="{logo}" alt="ENG" width="30px" height="30px" /></a>
+    <ul class="nav_burger_menu">
+      <li><a href="/grammar">Грамматика</a></li>
+      <li><a href="/text">Тексты</a></li>
+      <li><a href="/audio">Аудио</a></li>
+      <li><a href="/video">Видео</a></li>
+    </ul> 
+  </nav>
+</div> */
