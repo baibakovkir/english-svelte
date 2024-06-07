@@ -3,8 +3,6 @@
   import spanishColor from '$lib/assets/spanishFlag.avif';
   import codingColor from '$lib/assets/programming.avif';
   import circles from '$lib/assets/circles.svg';
-  import { form, field } from 'svelte-forms';
-  import { required } from 'svelte-forms/validators';
   
 
   let name = '';
@@ -61,5 +59,5 @@
         <button class="spheres__button" type="submit">Отправить</button>
       </div>
     </form>
-  <p class="spheres__text">Нравится проект? Расскажи о нас!</p>
+  <p class="spheres__text">Нравится проект? Расскажите о нас!</p>
 </section>
