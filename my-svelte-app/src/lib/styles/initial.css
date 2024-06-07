@@ -63,7 +63,7 @@
 }
 
 .initial__box__img {
-  max-width: 400px;
+  max-width: 350px;
   filter: grayscale(100%);
   transition: filter 0.5s;
   margin-top: -20px;
@@ -76,6 +76,12 @@
 
 .initial__box:hover .initial__box__text_yellow {
   color: #eb5e28;
+}
+.initial__link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
@@ -107,4 +113,12 @@
   .initial__text {
     width: 300px;
   }
+
+  .initial__box:focus-visible {
+    filter: none;
+  }
+  .initial__box:focus-visible .initial__box__text_yellow {
+    color: #eb5e28;
+  }
+  
 }

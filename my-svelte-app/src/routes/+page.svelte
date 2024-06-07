@@ -31,17 +31,24 @@
 <p class="initial__text">База знаний - это платформа для изучения всего на свете!</p>
 <p class="initial__text">На данный момент доступны курсы:</p>
 <div class="initial__grid">
+
   <div class="initial__box">
+    <a href="/english" class="initial__link">
     <img src="{englishColor}" alt="Английский" class="initial__box__img">
     <p class="initial__box__text initial__box__text_yellow">Английский язык</p>
+    </a>
   </div>
   <div class="initial__box">
+    <a href="/development" class="initial__link">
     <img src="{spanishColor}" alt="Испанский" class="initial__box__img">
     <p class="initial__box__text initial__box__text_yellow">Испанский язык</p>
+    </a>
   </div>
   <div class="initial__box">
+    <a href="/development" class="initial__link">
     <img src="{codingColor}" alt="Программирование" class="initial__box__img">
     <p class="initial__box__text initial__box__text_yellow">Программирование</p>
+    </a>
   </div>
 </div>
 </section>
@@ -50,7 +57,9 @@
     <form class="spheres__form" on:submit|preventDefault={sendMessage}>
       <input class="spheres__input spheres__input_name" type="text" bind:value={name} placeholder="Ваше имя">
       <textarea class="spheres__input spheres__input_message" rows="5" bind:value={message} placeholder="Ваше сообщение"></textarea>
-      <button class="spheres__button" type="submit">Отправить</button>
+      <div class="spheres__button__wrapper">
+        <button class="spheres__button" type="submit">Отправить</button>
+      </div>
     </form>
   <p class="spheres__text">Нравится проект? Расскажи о нас!</p>
 </section>
