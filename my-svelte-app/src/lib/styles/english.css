@@ -1,0 +1,124 @@
+.english {
+    min-height: 90vh;
+}
+
+.english__title {
+    margin: 50px 0 50px;
+}
+
+.english__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    margin: 20px 20px 80px;
+    max-width: 1200px;
+  }
+  .english__box{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    height: 500px;
+    overflow:hidden;
+    cursor: pointer;
+
+  }
+  
+  .english__box__text {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.5s;
+    text-align: center;
+    margin-top: 20px;
+    height: 5%;
+  }
+  
+  .english__box__img {
+    max-width: 350px;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+    margin-top: -20px;
+    height: 95%;
+    object-fit: cover;
+  }
+
+  .english__box__center-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+  }
+
+  .english__box__big-text{
+    font-size: 72px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: black;
+    transition: color 0.5s;
+  }
+
+  .english__box:hover .english__box__img {
+    filter: none; /* Remove the black and white filter on hover */
+  }
+
+  .english__box:hover .english__box__big-text {
+    color: #eb5e28;
+  }
+  
+  .english__box:hover .english__box__text_yellow {
+    color: #eb5e28;
+  }
+  .english__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .english__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .english__title {
+      font-size: 48px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .english__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .english__title {
+      font-size: 32px;
+      text-align: center;
+    }
+  
+    .english__box {
+      margin-top: 0;
+    }
+  
+    .english__box__img {
+      max-width: 300px;
+    }
+    .english__text {
+      width: 300px;
+    }
+  
+    .english__box:focus-visible {
+      filter: none;
+    }
+    .english__box:focus-visible .english__box__text_yellow {
+      color: #eb5e28;
+    }
+    
+  }

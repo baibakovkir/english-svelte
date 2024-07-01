@@ -6,7 +6,7 @@
 
   function openMenu() {
     const menu = document.querySelector('.header__menu');
-    menu.classList.add('header__menu_active');
+    menu?.classList.add('header__menu_active');
     // if opened want to disaable scroll
     document.body.style.height = '100vh';
     document.body.style.overflow = 'hidden';
@@ -14,7 +14,7 @@
 
   function closeMenu() {
     const menu = document.querySelector('.header__menu');
-    menu.classList.remove('header__menu_active');
+    menu?.classList.remove('header__menu_active');
     document.body.style.height = 'auto';
     document.body.style.overflow = 'visible';
   }

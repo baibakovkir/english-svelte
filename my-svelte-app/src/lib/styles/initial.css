@@ -70,7 +70,7 @@
   
 }
 
-.initial__box:hover img {
+.initial__box:hover .initial__box__img {
   filter: none; /* Remove the black and white filter on hover */
 }
 
