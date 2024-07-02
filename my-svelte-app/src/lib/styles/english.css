@@ -1,5 +1,5 @@
 .english {
-    min-height: 90vh;
+    min-height: 100%;
 }
 
 .english__title {
@@ -37,7 +37,9 @@
   }
   
   .english__box__img {
+    min-width: 100%;
     max-width: 350px;
+    max-height: 450px;
     filter: grayscale(100%);
     transition: filter 0.5s;
     margin-top: -20px;

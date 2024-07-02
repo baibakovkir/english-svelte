@@ -33,7 +33,8 @@
     <button type="button" class="header__button header__button__burger" on:click={openMenu}></button>
   </nav>
 </div>
-
-<slot />
+<main class="main">
+  <slot />
+</main>
 
 <Footer />

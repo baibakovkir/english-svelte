@@ -5,5 +5,5 @@
 </script>
 
 <section class="text">
-	<embed src={pdfUrl} type="application/pdf" class="text__pdf" />
+	<embed src={pdfUrl} type="application/pdf" class="text__pdf" allowfullscreen />
 </section>
