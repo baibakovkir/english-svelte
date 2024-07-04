@@ -15,6 +15,10 @@
   list-style: none;
 }
 
+.header__menu__item {
+  font-size: 18px;
+}
+
 .header__button {
   display: none;
 }

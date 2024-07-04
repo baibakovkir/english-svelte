@@ -1,9 +1,10 @@
+@import url(./normalize.css);
 @import url(./text.css);
 @import url(./initial.css);
 @import url(./grammar.css);
 @import url(./video.css);
-@import url(./normalize.css);
 @import url(./spheres.css);
 @import url(./header.css);
 @import url(./development.css);
 @import url(./english.css);
+@import url(./english-course.css);
