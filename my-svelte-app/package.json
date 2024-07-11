@@ -11,7 +11,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"svelte": "^4.2.7",
@@ -23,6 +23,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
 		"howler": "^2.2.4",
 		"init": "^0.1.2",
 		"nltk": "^0.0.1",
