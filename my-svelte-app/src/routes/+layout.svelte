@@ -28,6 +28,7 @@
       <li class="header__menu__item"><a class="header__link" href="/text">Тексты</a></li>
       <li class="header__menu__item"><a class="header__link" href="/audio">Аудио</a></li>
       <li class="header__menu__item"><a class="header__link" href="/video">Видео</a></li>
+      <li class="header__menu__item"><a class="header__link" href="/about">О проекте</a></li>
       <button type="button" class="header__button header__button__close" on:click={closeMenu}></button>
     </ul>
     <button type="button" class="header__button header__button__burger" on:click={openMenu}></button>
