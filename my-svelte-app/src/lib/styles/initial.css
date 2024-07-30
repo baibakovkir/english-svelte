@@ -84,6 +84,11 @@
   display: block;
 }
 
+.initial__important {
+  margin: 0;
+  color: var(--flame)
+}
+
 @media screen and (max-width: 1024px) {
   .initial__grid {
     grid-template-columns: repeat(2, 1fr);
