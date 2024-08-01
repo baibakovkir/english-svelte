@@ -1,9 +1,24 @@
+import { text } from "@sveltejs/kit";
+
 export const posts = [
 	{
 		title: 'Порядок обстоятельств',
 		slug: 'adjective-order',
-		content:
-			'Sometimes we use two or more adjectives together: /n My brother lives in a nice new house. /n In the kitchen there was a beautiful large round wooden table. /n Adjectives like  /it new/large/round/wooden it/  are fact adjectives. They give us information about age, size, colour etc. /n  Adjectives like  /it nice/beautiful it/  are opinion adjectives. They tell us what the speaker thinks of something or somebody. /im Opinion adjectives usually go before fact adjectives! im/ '
+		section1: {
+			text1:
+			'Sometimes we use two or more adjectives together:',
+			example1: 'My brother lives in a  /it  nice new  it/  house.',
+			example2: 'In the kitchen there was a  /it  beautiful large round wooden it/  table.',
+			table1: ' /col /0 a an /0 a col/  /col opinion nice interesting delicious beautiful col/  /col fact long young hot large/20round/20wooden col/  /col /0 summer/20holiday man vegetable/20soup table col/ ',
+			text2:'Adjectives like  /it new/large/round/wooden it/  are fact adjectives. They give us information about age, size, colour etc. /n  Adjectives like  /it nice/beautiful it/  are opinion adjectives. They tell us what the speaker thinks of something or somebody. /n  /im Opinion adjectives usually go before fact adjectives! im/ ',
+		},
+		section2: {
+			text1: ' Sometimes we use two or more fact adjectives together. Usually (not always) we put fact adjectives in this order:',
+			example1: '',
+			example2: '',
+			table1: ' /col 1/20how/20big? col/  /col 2/20how/20old? col/  /col 3/20what/20colour? col/  /col 4/20where/20from? col/  /col 5/20what/20is/20it/20made/20of?  col/  /col  NOUN  col/ ',
+		  text2: 'a tall young man (1 → 2) /n a large wooden table (1 → 5) /n big blue eyes (1 → 3) /n an old Russian song (2 → 4) /n a small black plastic bag (1 → 3 → 5) /n an old white cotton shirt (2 → 3 → 5)',
+		},
 	},
 	{
 		title: 'Предложения с It',
