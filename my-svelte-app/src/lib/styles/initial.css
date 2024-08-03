@@ -29,7 +29,7 @@
 .initial__title {
   color: #333;
   font-size: 64px;
-  margin: 0 0 30px;
+  margin: 30px 0 30px;
   text-align: center;
 }
 .initial__grid {
@@ -89,6 +89,14 @@
   color: var(--flame)
 }
 
+.initial__about {
+  margin-bottom: 50px;
+}
+
+.initial__about__wrapper {
+  margin: 20px 0;
+}
+
 .initial__about__text {
   max-width: 1200px;
   margin: 0;
@@ -120,7 +128,7 @@
   display: flex;
   border:  var(--flame) 1px solid;
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 20px auto;
   padding: 20px;
   width: fit-content;
   max-width: 1200px;
@@ -144,6 +152,32 @@
 
 .initial__about__table__cell:first-child {
   font-weight: 600;
+}
+
+.initial__about__section-number {
+  color: var(--flame);
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+  border: 3px solid var(--link);
+  border-radius: 5px;
+}
+
+.initial__tasks__drag-words__item {
+  display: flex;
+  position: float;
+}
+
+.initial__tasks__drag-words__item__word {
+  cursor: grab;
+}
+
+.initial__tasks__drag-words__item__word:hover {
+  color: var(--flame);
+}
+
+.initial__tasks__drag-words__item_active {
+  color: var(--flame);
 }
 
 @media screen and (max-width: 1024px) {
