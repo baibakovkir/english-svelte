@@ -2,8 +2,6 @@
   import '$lib/styles/index.css';
   import logo from '$lib/assets/logo.png';
   import Footer from './Footer.svelte';
-
-
   function openMenu() {
     const menu = document.querySelector('.header__menu');
     menu?.classList.add('header__menu_active');

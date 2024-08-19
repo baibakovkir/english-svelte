@@ -1,7 +1,7 @@
 <script>
 	export let data;
 
-	const videoLink = data.post.link.split('v=')[1];
+	const videoLink = data.post.link?.split('v=')[1];
 </script>
 
 <section class="video">

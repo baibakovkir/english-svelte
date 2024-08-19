@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import englishColor from '$lib/assets/english.avif';
   import spanishColor from '$lib/assets/spanishFlag.avif';
   import codingColor from '$lib/assets/programming.avif';
@@ -8,7 +8,7 @@
   let name = '';
   let message = '';
   
-  function sendMessage(event) {
+  function sendMessage(event: any) {
     event.preventDefault();
     const newMessage = {
       name,
@@ -21,6 +21,7 @@
     message = '';
   }
 </script>
+
 <section class="initial">
 <img class="initial__img" src="{circles}" alt="Круги">
 <h1 class="initial__title">

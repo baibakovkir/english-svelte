@@ -1,132 +1,166 @@
+import { text } from "@sveltejs/kit";
+
 export const posts = [
 	{
-		slug: 'welcome',
-		title: 'Welcome to the Aperture Science computer-aided enrichment center',
-		content:
-			'<p>We hope your brief detention in the relaxation vault has been a pleasant one.</p><p>Your specimen has been processed and we are now ready to begin the test proper.</p>'
-	},
-	{
-		name: 'Порядок обстоятельств',
+		title: 'Порядок обстоятельств',
 		slug: 'adjective-order',
+		section1: {
+			text1:
+			'Sometimes we use two or more adjectives together:',
+			example1: 'My brother lives in a  /it  nice new  it/  house.',
+			example2: 'In the kitchen there was a  /it  beautiful large round wooden it/  table.',
+			text2:'Adjectives like  /it new/large/round/wooden it/  are fact adjectives. They give us information about age, size, colour etc. /n  Adjectives like  /it nice/beautiful it/  are opinion adjectives. They tell us what the speaker thinks of something or somebody. /n  /im Opinion adjectives usually go before fact adjectives! im/ ',
+		},
+		table1: ' /col /0 a an /0 a col/  /col opinion nice interesting delicious beautiful col/  /col fact long young hot large/20round/20wooden col/  /col /0 summer/20holiday man vegetable/20soup table col/ ',
+		section2: {
+			text1: ' Sometimes we use two or more fact adjectives together. Usually (not always) we put fact adjectives in this order:',
+			example1: '',
+			example2: '',
+		  	text2: 'a tall young man (1 → 2) /n a large wooden table (1 → 5) /n big blue eyes (1 → 3) /n an old Russian song (2 → 4) /n a small black plastic bag (1 → 3 → 5) /n an old white cotton shirt (2 → 3 → 5)',
+		},
+		table2: ' /col 1/20how/20big? col/  /col 2/20how/20old? col/  /col 3/20what/20colour? col/  /col 4/20where/20from? col/  /col 5/20what/20is/20it/20made/20of?  col/  /col  NOUN  col/ ',
+		section3: {
+			text1: 'We use adjectives after be/get/become/seem: /n  ',
+			example1: 'Be careful!',
+			example2: 'I’m tired and I’m getting hungry.',
+			text2: 'We also use adjectives to say how somebody/something looks, feels, sounds, tastes or smells: /n  You look tired. /n I feel tired. /n She sounds tired. /n The dinner smells good. /n This tea tastes a bit strange /n But to say how somebody does something you must use an adverb: /n Drive carefully! (not Drive careful) /n Suzanne plays the piano very well. (not plays … very good)',
+		},
+		table3: '',
+		section4: {
+			text1: 'We say ‘the first two days’, ‘the next few weeks’, ‘the last ten minutes’ etc. :',
+			example1: 'I didn’t enjoy the first two days of the course. (not the two first days)',
+			example2: 'They’ll be away for the next few weeks. (not the few next weeks)',
+			text2: ''
+		},
+		table4: '',
+		tasks: {
+			dragWords: [
+				'a beautiful round wooden table',
+				'an unusual gold ring',
+				'a beautiful old house ',
+				'red leather gloves',
+				'a big fat black and white cat',
+			]
+		}
 	},
 	{
-		name: 'Предложения с It',
+		title: 'Предложения с It',
 		slug: 'it-in-the-beginning',
 	},
 	{
-		name: 'There + to be',
+		title: 'There + to be',
 		slug: 'there-to-be',
 	},
 	{
-		name: 'Сложносочиненные предложения', //https://studfile.net/preview/3682072/page:39/
+		title: 'Сложносочиненные предложения', //https://studfile.net/preview/3682072/page:39/
 		slug: 'compound-sentences',
 	},
 	{
-		name: 'Сложноподчиненные предложения',
+		title: 'Сложноподчиненные предложения',
 		slug: 'complex-sentences',
 	},
 	{
-		name: 'Условные предложения реального характера (Conditional 1)',
+		title: 'Условные предложения реального характера (Conditional 1)',
 		slug: 'conditional-1',
 	},
 	{
-		name: 'Условные предложения нереального характера (Conditional 2)',
+		title: 'Условные предложения нереального характера (Conditional 2)',
 		slug: 'conditional-2',
 	},
 	{
-		name: 'I wish...',
+		title: 'I wish...',
 		slug: 'i-wish',
 	},
 	{
-		name: 'so/such',
+		title: 'so/such',
 		slug: 'so-such',
 	},
 	{
-		name: 'as ... as; not so ... as; neither ... nor; either ... or;',
+		title: 'as ... as; not so ... as; neither ... nor; either ... or;',
 		slug: 'as-not-so',
 	},
 	{
-		name: 'Конструкции с глаголами на -ing',
+		title: 'Конструкции с глаголами на -ing',
 		slug: 'ing-verb-constructions',
 	},
 	{
-		name: 'Конструкции it takes me ... to ...',
+		title: 'Конструкции it takes me ... to ...',
 		slug: 'it-takes-me',
 	},
 	{
-		name: 'Согласование времен в плане настоящего и прошлого',
+		title: 'Согласование времен в плане настоящего и прошлого',
 		slug: 'conjunctions-present-and-past',
 	},
 	{
-		name: 'Косвенная речь в настоящем и прошедшем времени',
+		title: 'Косвенная речь в настоящем и прошедшем времени',
 		slug: 'indirect-speech-present-and-past',
 	},
 	{
-		name: 'Простой страдательный залог (Simple passive voice)',
+		title: 'Простой страдательный залог (Simple passive voice)',
 		slug: 'simple-passive',
 	},
 	{
-		name: 'Фразовые глаголы',
+		title: 'Фразовые глаголы',
 		slug: 'phrasal-verbs',
 	},
 	{
-		name: 'Модальные глаголы',
+		title: 'Модальные глаголы',
 		slug: 'modal-verbs',
 	},
 	{
-		name: 'Будущее время в английском языке (future in English)',
+		title: 'Будущее время в английском языке (future in English)',
 		slug: 'future-in-english',
 	},
 	{
-		name: 'Причастие I (participle I)',
+		title: 'Причастие I (participle I)',
 		slug: 'participle-I',
 	},
 	{
-		name: 'Причастие II (participle II)',
+		title: 'Причастие II (participle II)',
 		slug: 'participle-II',
 	},
 	{
-		name: 'Существительные во множественном числе',
+		title: 'Существительные во множественном числе',
 		slug: 'plural-nouns',
 	},
 	{
-		name: 'Исчисляемые и неисчисляемые существительные',
+		title: 'Исчисляемые и неисчисляемые существительные',
 		slug: 'countable-and-uncountable-nouns',
 	},
 	{
-		name: 'Артикли',
+		title: 'Артикли',
 		slug: 'articles',
 	},
 	{
-		name: 'Местоимения',
+		title: 'Местоимения',
 		slug: 'pronouns',
 	},
 	{
-		name: 'Степени сравнения прилагательных',
+		title: 'Степени сравнения прилагательных',
 		slug: 'comparative-adjectives',
 	},
 	{
-		name: 'Наречия в сравнительной и превосходной степени/ наречия количества',
+		title: 'Наречия в сравнительной и превосходной степени/ наречия количества',
 		slug: 'comparative-and-superlative-adverbs',
 	},
 	{
-		name: 'Количественные числительные',
+		title: 'Количественные числительные',
 		slug: 'cardinal-numbers',
 	},
 	{
-		name: 'Порядковые числительные',
+		title: 'Порядковые числительные',
 		slug: 'ordinal-numbers',
 	},
 	{
-		name: 'Предлоги места, направления и времени',
+		title: 'Предлоги места, направления и времени',
 		slug: 'prepositions-locations-and-times',
 	},
 	{
-		name: 'Связующие компоненты в тексте',
+		title: 'Связующие компоненты в тексте',
 		slug: 'text-components',
 	},
 	{
-		name: 'Словообразование',
+		title: 'Словообразование',
 		slug: 'word-formation',
 	}
 ];
