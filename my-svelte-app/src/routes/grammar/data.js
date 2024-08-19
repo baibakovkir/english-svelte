@@ -16,9 +16,9 @@ export const posts = [
 			text1: ' Sometimes we use two or more fact adjectives together. Usually (not always) we put fact adjectives in this order:',
 			example1: '',
 			example2: '',
-		  	text2: 'a tall young man (1 → 2) /n a large wooden table (1 → 5) /n big blue eyes (1 → 3) /n an old Russian song (2 → 4) /n a small black plastic bag (1 → 3 → 5) /n an old white cotton shirt (2 → 3 → 5)',
+		  text2: 'a tall young man (1 → 2) /n a large wooden table (1 → 5) /n big blue eyes (1 → 3) /n an old Russian song (2 → 4) /n a small black plastic bag (1 → 3 → 5) /n an old white cotton shirt (2 → 3 → 5)',
 		},
-		table2: ' /col 1/20how/20big? col/  /col 2/20how/20old? col/  /col 3/20what/20colour? col/  /col 4/20where/20from? col/  /col 5/20what/20is/20it/20made/20of?  col/  /col  NOUN  col/ ',
+		table2: ' /col how/20big? col/  /col how/20old? col/  /col what/20colour? col/  /col where/20from? col/  /col what/20is/20it/20made/20of? col/  /col NOUN col/ ',
 		section3: {
 			text1: 'We use adjectives after be/get/become/seem: /n  ',
 			example1: 'Be careful!',
@@ -37,10 +37,33 @@ export const posts = [
 			dragWords: [
 				'a beautiful round wooden table',
 				'an unusual gold ring',
-				'a beautiful old house ',
+				'a beautiful old house',
 				'red leather gloves',
 				'a big fat black and white cat',
-			]
+				'a large red and yellow umbrella',
+				'an interesting old French painting',
+				'beautiful long black hair'
+			],
+			correctForm: {
+				box1: 'feel look seem smell sound taste',
+				box2: 'awful nervous interesting nice upset wet',
+				sentences: [
+					'Helen /input this morning. Do you know what was wrong?',
+					'I can’t eat this. I’ve just tried it and it /input',
+					' It’s normal to /input before an exam or an interview.',
+					'What beautiful flowers! They /input too.',
+					'You /input . Have you been out in the rain?',
+					'James told me about his new job. It /input  – much better than his old job.'
+				],
+				answers: [
+					'seemed upset',
+					'tastes/tasted awful',
+					'feel nervous',
+					'smell nice',
+					'look wet',
+					'sounds/sounded interesting'
+				]
+			}
 		}
 	},
 	{

@@ -128,6 +128,7 @@ const options = {
 			--link: hsl(208, 77%, 47%);\r
 			--link-hover: hsl(208, 77%, 55%);\r
 			--link-active: hsl(208, 77%, 40%);\r
+			--success: hsl(120, 100%, 40%);\r
 			--border-radius: 4px;\r
 			--font: Georgia, Tahoma, sans-serif;\r
 			--font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,\r
@@ -136,7 +137,6 @@ const options = {
 			color: var(--fg-1);\r
 			font-family: var(--font);\r
 			line-height: 1.5;\r
-			margin: 1rem;\r
 			height: calc(100vh - 144px);\r
 			\r
 		}\r
@@ -376,7 +376,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "e1kal3"
+  version_hash: "ebuwpd"
 };
 async function get_hooks() {
   return {};
