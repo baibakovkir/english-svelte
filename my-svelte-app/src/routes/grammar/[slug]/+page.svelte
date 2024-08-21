@@ -153,9 +153,14 @@ function handleDrop(event) {
 }
 
 //correctForm module
+
 const correctForm = data.post.tasks?.correctForm;
+const sentences = correctForm?.sentences;
+const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<textarea class="initial__tasks__correct-form__textarea" name="input' + i + '" id="input' + i + '"></textarea>'));
+const answers = correctForm?.answers;
 
 
+//onMount
 onMount(() => {
 	if (initialWords?.length) {
 		shuffleWords = initialWords?.map(phrase => {
@@ -181,6 +186,19 @@ onMount(() => {
 	}
 	wordsElements.forEach(item => {
 		item.addEventListener('drop', getInnerText);
+	});
+	const textareasAnswers = document.querySelectorAll('.initial__tasks__correct-form__textarea');
+
+	textareasAnswers.forEach((textarea, i) => {
+		textarea.addEventListener('input', () => {
+			const answerOptions = answers[i].split('/');
+			console.log(answerOptions);
+			if (answerOptions.includes(textarea.value)) {
+				textarea.classList.add('initial__tasks__correct-form__textarea_success');
+			} else {
+				textarea.classList.remove('initial__tasks__correct-form__textarea_success');
+			}
+		});
 	});
 });
 
@@ -240,16 +258,21 @@ onMount(() => {
 			<div class="initial__tasks__correct-form">
 				<h3 class="initial__tasks__correct-form__title">Закончите предложения. Используйте слова в нужной форме.</h3>
 				<div class ="initial__tasks__correct-form__boxes">
-					<div class="initial__tasks__correct-form__box1">
+					<div class="initial__tasks__correct-form__box">
 						{#each correctForm?.box1?.split(' ') as word}
-							<div class="initial__tasks__correct-form__box1__item">{word}</div>
+							<p class="initial__tasks__correct-form__box__item">{word}</p>
 						{/each}
 					</div>
-					<div class="initial__tasks__correct-form__box2">
+					<div class="initial__tasks__correct-form__box">
 						{#each correctForm?.box2?.split(' ') as word}
-							<div class="initial__tasks__correct-form__box2__item">{word}</div>
+							<p class="initial__tasks__correct-form__box__item">{word}</p>
 						{/each}
 					</div>
+				</div>
+				<div class="initial__tasks__correct-form__sentences">
+					{#each renderSentenses as sentence, i}
+						<div class="initial__tasks__correct-form__sentence">{i+1}. {@html sentence}</div>
+					{/each}
 				</div>
 			</div>
 		{/if}

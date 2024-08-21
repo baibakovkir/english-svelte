@@ -57,11 +57,11 @@ export const posts = [
 				],
 				answers: [
 					'seemed upset',
-					'tastes/tasted awful',
+					'tastes awful/tasted awful',
 					'feel nervous',
 					'smell nice',
 					'look wet',
-					'sounds/sounded interesting'
+					'sounds interesting/sounded interesting'
 				]
 			}
 		}
