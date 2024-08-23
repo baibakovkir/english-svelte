@@ -156,7 +156,7 @@ function handleDrop(event) {
 
 const correctForm = data.post.tasks?.correctForm;
 const sentences = correctForm?.sentences;
-const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<textarea class="initial__tasks__correct-form__textarea" name="input' + i + '" id="input' + i + '"></textarea>'));
+const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<input type="text" class="initial__tasks__correct-form__textarea" name="input' + i + '" id="input' + i + '"></input>'));
 const answers = correctForm?.answers;
 
 
