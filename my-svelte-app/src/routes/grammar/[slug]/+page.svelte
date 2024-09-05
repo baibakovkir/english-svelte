@@ -4,7 +4,8 @@
 
 <script>
 import { shuffle } from 'lodash-es';
-    import { onMount } from 'svelte';
+import { onMount } from 'svelte';
+import arrowRight from '$lib/assets/arrow-right.svg';
 export let data;
 function contentToHtml(content) {
 	let res = content
@@ -156,7 +157,7 @@ function handleDrop(event) {
 
 const correctForm = data.post.tasks?.correctForm;
 const sentences = correctForm?.sentences;
-const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<input type="text" class="initial__tasks__correct-form__textarea" name="input' + i + '" id="input' + i + '"></input>'));
+const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<input type="text" class="initial__tasks__correct-form__input" name="input' + i + '" id="input' + i + '"></input>'));
 const answers = correctForm?.answers;
 
 
@@ -187,16 +188,15 @@ onMount(() => {
 	wordsElements.forEach(item => {
 		item.addEventListener('drop', getInnerText);
 	});
-	const textareasAnswers = document.querySelectorAll('.initial__tasks__correct-form__textarea');
+	const inputsAnswers = document.querySelectorAll('.initial__tasks__correct-form__input');
 
-	textareasAnswers.forEach((textarea, i) => {
-		textarea.addEventListener('input', () => {
+	inputsAnswers.forEach((input, i) => {
+		input.addEventListener('input', () => {
 			const answerOptions = answers[i].split('/');
-			console.log(answerOptions);
-			if (answerOptions.includes(textarea.value)) {
-				textarea.classList.add('initial__tasks__correct-form__textarea_success');
+			if (answerOptions.includes(input.value)) {
+				input.classList.add('initial__tasks__correct-form__input_success');
 			} else {
-				textarea.classList.remove('initial__tasks__correct-form__textarea_success');
+				input.classList.remove('initial__tasks__correct-form__input_success');
 			}
 		});
 	});
@@ -206,8 +206,13 @@ onMount(() => {
 </script>
 
 <section class="initial">
-	<h1 class="initial__title">{data.post.title}</h1>
-	<div class="initial__about">
+	<div class="initial__top">
+		<h1 class="initial__title initial__title_right">{data.post.title}</h1>
+		<div class="initial__top-link">
+			<a href="/text/{data.post.slug}" class="initial__task-link">Перейти к тексту<img class="initial__link__arrow" src={arrowRight} alt="arrow"></a>	
+		</div>
+	</div>
+		<div class="initial__about">
 		{#each content as content, i}
 		<div class="initial__about__wrapper">
 			<p class="initial__about__section-number">{i + 1}</p>

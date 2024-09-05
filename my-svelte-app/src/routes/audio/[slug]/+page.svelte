@@ -2,6 +2,7 @@
   export let data;
   import { onMount, onDestroy } from 'svelte';
   import { Howl, Howler } from 'howler';
+  import arrowRight from '$lib/assets/arrow-right.svg';
 
 
   let isPlaying = false;
@@ -79,7 +80,12 @@
 </script>
 
 <section class="initial">
-  <h1 class="initial__title">{data.post.title}</h1>
+  <div class="initial__top">
+		<h1 class="initial__title initial__title_right">{data.post.title}</h1>
+		<div class="initial__top-link">
+			<a href="/video/{data.post.slug}" class="initial__task-link">Перейти к видео<img class="initial__link__arrow" src={arrowRight} alt="arrow"></a>	
+		</div>
+</div>
   <div class="initial__about">
     <div class="initial__box">
       {@html data.post.content}

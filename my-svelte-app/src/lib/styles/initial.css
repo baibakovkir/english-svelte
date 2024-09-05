@@ -32,6 +32,12 @@
   margin: 30px 0 30px;
   text-align: center;
 }
+
+.initial__title_right {
+  margin-left: auto;
+}
+
+
 .initial__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -48,7 +54,7 @@
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 25px;
-  overflow:hidden;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -82,6 +88,31 @@
   margin: 0;
   padding: 0;
   display: block;
+}
+
+.initial__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.initial__top-link {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.initial__task-link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.initial__link__arrow {
+  width: 20px;
+  margin-left: 10px;
+  filter: invert(47%) sepia(97%) saturate(2310%) hue-rotate(162deg) brightness(96%) contrast(101%);
 }
 
 .initial__important {
@@ -175,6 +206,8 @@
 .initial__tasks__drag-words__item {
   display: flex;
   position: float;
+  flex-wrap: wrap;
+  padding: 15px 0;
 }
 
 
@@ -182,8 +215,8 @@
   cursor: grab;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 10px 0;
   padding: 5px 10px;
+  margin: 5px 0 0;
   border-radius: 5px;
   background-color: #fff;
   transition: color 0.5s;
@@ -234,29 +267,42 @@
   margin: 20px 0;
 }
 
-.initial__tasks__correct-form__textarea {
+.initial__tasks__correct-form__input {
   resize: none;
-  border: var(--flame) 1px solid;
+  border-bottom: var(--flame) 1px solid;
   border-radius: 10px;
   padding: 10px;
-  width: 250px;
-  height: 50px;
   font-size: 16px;
 }
 
-.initial__tasks__correct-form__textarea_success {
+.initial__tasks__correct-form__input_success {
   color: var(--success);
   border-color: var(--success);
   pointer-events: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .initial__title {
+    font-size: 48px;
+  }
+  
 }
 
 @media screen and (max-width: 1024px) {
   .initial__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  .initial__top {
+    flex-direction: column;
+  }
   .initial__title {
-    font-size: 48px;
+    font-size: 40px;
+  }
+  .initial__title_right {
+    margin: 10px 0 20px;
+  }
+  .initial__top-link {
+    margin: 0;
   }
 }
 
@@ -334,14 +380,18 @@
     font-size: 16px;
   }
 
-  .initial__tasks__correct-form__textarea {
-    height: 40px;
+  .initial__tasks__correct-form__input {
     width: 150px;
+    height: 30px;
     font-size: 14px;
   }
 
   .initial__tasks__correct-form__title {
     font-size: 14px;
+  }
+
+  .initial__about {
+    margin-bottom: 0;
   }
 
 }
