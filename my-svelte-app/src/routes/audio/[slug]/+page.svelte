@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data;
   import { onMount, onDestroy } from 'svelte';
-  import { Howl, Howler } from 'howler';
+  import { Howl } from 'howler';
   import arrowRight from '$lib/assets/arrow-right.svg';
 
 
@@ -87,8 +87,7 @@
 		</div>
 </div>
   <div class="initial__about">
-    <div class="initial__box">
-      {@html data.post.content}
+    <div class="initial__box initial__box_audio">
       <div>
         <button on:click={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
         <input type="range" min="0" max="1" step="0.01" value={volume} on:input={adjustVolume}>

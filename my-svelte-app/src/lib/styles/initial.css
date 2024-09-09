@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+.initial__box_audio {
+  padding: 0 20px 20px;
+}
+
 .initial__box__text {
   color: #333;
   font-size: 24px;
@@ -210,6 +214,10 @@
   padding: 15px 0;
 }
 
+.initial__tasks__drag-words__text {
+  font-size: 18px;
+  color: var(--link);
+}
 
 .initial__tasks__drag-words__item__word {
   cursor: grab;
@@ -356,6 +364,10 @@
   }
 
   .initial__tasks__drag-words__title {
+    font-size: 14px;
+  }
+
+  .initial__tasks__drag-words__text {
     font-size: 14px;
   }
 

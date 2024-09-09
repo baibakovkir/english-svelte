@@ -4,6 +4,6 @@
 }
 
 .video__iframe {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 240px);
   width: 100%;
 }

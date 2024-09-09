@@ -12,5 +12,5 @@
 			<a href="/audio/{data.post.slug}" class="initial__task-link">Перейти к аудио<img class="initial__link__arrow" src={arrowRight} alt="arrow"></a>	
 		</div>
 </div>
-<embed src={pdfUrl} type="application/pdf" class="text__pdf" allowfullscreen />
+<embed src={data.post.pdf} type="application/pdf" class="text__pdf" allowfullscreen />
 </section>
