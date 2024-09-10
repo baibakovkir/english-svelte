@@ -1,3 +1,4 @@
+@import url(./tailwind.css);
 @import url(./normalize.css);
 @import url(./text.css);
 @import url(./initial.css);
@@ -9,3 +10,4 @@
 @import url(./english.css);
 @import url(./english-course.css);
 @import url(./menu.css);
+@import url(./audio.css);
