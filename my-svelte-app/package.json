@@ -9,7 +9,7 @@
 		"build-storybook": "build-storybook",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"postinstall": "npx tailwindcss -i ./src/lib/tailwind.css -o ./src/global.css"
+		"postinstall": "npx tailwindcss -i ./src/app.css -o ./src/global.css"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^3.0.0",

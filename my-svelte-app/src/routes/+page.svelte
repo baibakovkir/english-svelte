@@ -1,14 +1,15 @@
-<script lang="ts">
+<script>
   import englishColor from '$lib/assets/english.avif';
   import spanishColor from '$lib/assets/spanishFlag.avif';
   import codingColor from '$lib/assets/programming.avif';
   import circles from '$lib/assets/circles.svg';
+  import TextTitle from '../components/TextHeaderShine.svelte';
   
 
   let name = '';
   let message = '';
   
-  function sendMessage(event: any) {
+  function sendMessage(event) {
     event.preventDefault();
     const newMessage = {
       name,
@@ -24,9 +25,7 @@
 
 <section class="initial">
 <img class="initial__img" src="{circles}" alt="Круги">
-<h1 class="initial__title">
-  База знаний
-</h1>
+<TextTitle title="База знаний"/>
 <p class="initial__text">База знаний - это платформа для изучения всего на свете!</p>
 <p class="initial__text">На данный момент доступны курсы:</p>
 <div class="initial__grid">

@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
       animation: {
         meteor: "meteor 5s linear infinite",
+        shine: "shine 2s linear infinite",
       },
       keyframes: {
         meteor: {
@@ -15,8 +16,12 @@ export default {
             opacity: 0,
           },
         },
+        shine: {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
+        },
       },
-  },
+    },
   },
   plugins: [],
-}
+};

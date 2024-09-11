@@ -1,11 +1,11 @@
 .audio {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   gap: 1rem;
   width: 100%;
-  margin-top: 500px;
+  height: 100%;
 }
 
 .audio__player-box {
@@ -13,15 +13,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--bg-1);
+  background-color: #f8f8f8;;
   border-radius: var(--border-radius);
   padding: 1rem 0;
-  margin-top: 500px;
+  z-index: 1;
   width: 100%;
+  height: 100px;
 }
 
 .audio__button__play {
   background-image: url(../assets/play-pause.svg);
+  background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
   width: 1.5rem;
@@ -34,6 +36,7 @@
 
 .audio__button__mute {
   background-image: url(../assets/sound-max.svg);
+  background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
   width: 1.5rem;
@@ -79,6 +82,7 @@
   display: inline-block;
   font-size: 0.8rem;
   text-align: center;
+  width: 100px;
 }
 
 

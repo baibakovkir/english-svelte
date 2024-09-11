@@ -5,7 +5,8 @@
 <script>
 import { shuffle } from 'lodash-es';
 import { onMount } from 'svelte';
-import arrowRight from '$lib/assets/arrow-right.svg';
+import LinkAnimated from "../../../components/LinkAnimated.svelte";
+import TextTitle from '../../../components/TextHeaderShine.svelte';
 export let data;
 function contentToHtml(content) {
 	let res = content
@@ -204,12 +205,8 @@ onMount(() => {
 </script>
 
 <section class="initial">
-	<div class="initial__top">
-		<h1 class="initial__title initial__title_right">{data.post.title}</h1>
-		<div class="initial__top-link">
-			<a href="/text/{data.post.slug}" class="initial__task-link">Перейти к тексту<img class="initial__link__arrow" src={arrowRight} alt="arrow"></a>	
-		</div>
-	</div>
+	<TextTitle title="{data.post.title}"/>
+	<LinkAnimated link='/text/{data.post.slug}' name='Далее'/>
 		<div class="initial__about">
 		{#each content as content, i}
 		<div class="initial__about__wrapper">

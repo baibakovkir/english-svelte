@@ -16,8 +16,9 @@
   max-width: fit-content;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 50px;
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   justify-content: start;

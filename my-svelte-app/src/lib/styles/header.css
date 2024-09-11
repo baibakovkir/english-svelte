@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   display: flex;
+  min-height: 70px;
 }
 .header__nav {
   width: 100%;

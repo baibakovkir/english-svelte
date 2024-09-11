@@ -1,5 +1,5 @@
-@import url(./tailwind.css);
 @import url(./normalize.css);
+@import url(./page.css);
 @import url(./text.css);
 @import url(./initial.css);
 @import url(./grammar.css);

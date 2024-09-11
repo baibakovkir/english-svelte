@@ -22,7 +22,8 @@
     height: 500px;
     overflow:hidden;
     cursor: pointer;
-
+    min-width: 350px;
+    min-height: 450px;
   }
   
   .english__box__text {
@@ -107,6 +108,7 @@
   
     .english__box {
       margin-top: 0;
+      min-width: 300px;
     }
   
     .english__box__img {
