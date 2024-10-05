@@ -1,5 +1,3 @@
-import { text } from "@sveltejs/kit";
-
 export const posts = [
 	{
 		title: 'Порядок обстоятельств',
@@ -69,6 +67,61 @@ export const posts = [
 	{
 		title: 'Предложения с It',
 		slug: 'it-in-the-beginning',
+		section1: {
+			text1:
+			'When discussing the usage of “it” in a sentence, it is essential to begin by understanding the basic definition of this pronoun. In English grammar, “it” is a singular, gender-neutral pronoun used to refer to a previously mentioned or understood noun.',
+			example1: '',
+			example2: '',
+			text2:'The usage of “it” can be traced back to Old English, where it was derived from the Old Norse pronoun “hit.” Over time, the pronunciation and spelling of “it” have evolved, but its fundamental purpose has remained consistent. ',
+		},
+		table1: '',
+		section2: {
+			text1: ' While “it” generally serves as a straightforward pronoun, its meaning can vary depending on the context in which it is used. Here are a few instances where “it” takes on different meanings:',
+			example1: 'Placeholder Or Extraposition: It is raining heavily today. (It refers to the weather condition)',
+			example2: 'Anticipatory “It”: It is going to be a challenging exam. (It refers to the upcoming exam)',
+		  text2: 'In some cases, “it” acts as a placeholder or a subject that temporarily stands in for a more specific noun or phrase. This usage is often seen in sentences where the true subject is delayed or appears later in the sentence. “It” can also be used as an anticipatory subject when referring to an upcoming event or situation. This form of “it” allows speakers to introduce a topic before providing more details about it.',
+		},
+		table2: '',
+		section3: {
+			text1: 'The dummy “it” is commonly used in sentences that require a subject, but where the actual subject is not explicitly stated. This usage is often seen with verbs that express a condition, time, or distance.',
+			example1: 'Dummy “It”: It is essential to practice regularly. (It serves as a placeholder for the action of practicing)',
+			example2: '',
+			text2: 'It is important to note that the usage of “it” in these contexts may vary depending on the sentence structure and intended meaning. Therefore, understanding the surrounding words and context is crucial for accurately interpreting the role of “it” in a sentence.',
+		},
+		table3: '',
+		section4: {
+			text1: 'When it comes to using “it” in a sentence, there are several grammatical rules that must be considered. Understanding these rules is essential for effective communication and clarity in writing. Let’s delve into the intricacies of using “it” correctly. The word “it” is a pronoun, which means it is used to replace a noun or noun phrase in a sentence. Here are some key grammatical rules to keep in mind:',
+			example1: 'Antecedent Agreement: The cat is hungry, so I will feed it.',
+			example2: 'Gender Neutrality: The spaceship landed, and it emitted a bright light',
+			text2: 'Antecedent Agreement: “It” should refer to a specific noun or noun phrase that has been mentioned earlier in the sentence or context. This ensures clarity and avoids confusion. Gender Neutrality: “It” is often used to refer to objects, animals, or things that do not have a specific gender. This pronoun helps maintain gender neutrality in sentences. Also, “It” can function as both a subject and an object in a sentence. As a subject, it introduces the subject matter or provides a placeholder for a specific noun. As an object, it receives the action of the verb. For example, “It is raining heavily” (subject) and “I saw it in the store” (object).'
+		},
+		table4: '',
+		tasks: {
+			dragWords: [
+				'It is truly breathtaking',
+				'It was addressed to me',
+				'I have no idea who sent it',
+				'It is raining heavily outside',
+				'I have been searching for it',
+				'I received it today'
+			],
+			correctForm: {
+				box1: 'It its it',
+				box2: 'seems innovative has is',
+				sentences: [
+					'The company is known for /input products',
+					' /input gained a significant market share.',
+					' /input important to prioritize self-care',
+					'“I have been searching for my missing necklace, but /input to have vanished.',
+				],
+				answers: [
+					'its innovative',
+					'It has',
+					'It is',
+					'it seems',
+				]
+			}
+		}
 	},
 	{
 		title: 'There + to be',

@@ -153,7 +153,6 @@ function handleDrop(event) {
 }
 
 //correctForm module
-
 const correctForm = data.post.tasks?.correctForm;
 const sentences = correctForm?.sentences;
 const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<input type="text" class="initial__tasks__correct-form__input" name="input' + i + '" id="input' + i + '"></input>'));
@@ -205,8 +204,8 @@ onMount(() => {
 </script>
 
 <section class="initial">
+	<LinkAnimated name="Вернуться назад" link="javascript:history.back()"/>
 	<TextTitle title="{data.post.title}"/>
-	<LinkAnimated link='/text/{data.post.slug}' name='Далее'/>
 		<div class="initial__about">
 		{#each content as content, i}
 		<div class="initial__about__wrapper">
@@ -216,8 +215,12 @@ onMount(() => {
 			{/if}
 			{#if content?.example1}
 			<ul class="initial__about__list">
+				{#if content?.example1}
 				<li class="initial__about__list__item">{@html content.example1}</li>
+				{/if}
+				{#if content?.example2}
 				<li class="initial__about__list__item">{@html content.example2}</li>
+				{/if}
 			</ul>
 			{/if}
 			{#if content?.table}
@@ -277,5 +280,6 @@ onMount(() => {
 				</div>
 			</div>
 		{/if}
+		<LinkAnimated name="Назад" link="javascript:history.back()"/>
 	</div>
 </section>

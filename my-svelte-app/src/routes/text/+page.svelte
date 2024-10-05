@@ -1,6 +1,7 @@
 <script>
   import Sidebar from '../Sidebar.svelte';
   export let data;
+  import Card from '../../components/CardBackgroundShine.svelte';
 </script>
 
 <Sidebar>
@@ -17,10 +18,10 @@
     <p class="menu__text">Приветствуем вас на этой странице, где мы объясним вам преимущества разделения изучения грамматики на модули. Этот подход поможет вам лучше понять грамматику, ускорить процесс обучения и добиться успеха в изучении языка.</p>
     <p class="menu__text">Модули - это структурированные блоки информации, которые содержат основные аспекты грамматики языка. Каждый модуль посвящен определенной теме, такой как глаголы, прилагательные, местоимения и т. д. Разделение грамматики на модули делает обучение более организованным и доступным для понимания.</p>
     <ul class="menu__menu">
-      {#each data.summaries as { slug, title }}
-      <a class="menu__menu__item__link" href="/text/{slug}"><div class="menu__menu__item">
-        <li class="menu__menu__item__text">{title}</li>
-      </div></a>
+      {#each data.summaries as { title, slug }}
+      <a class="menu__menu__item__link" href="/text/{slug}">
+        <Card title="{title}" description="{slug}" />
+      </a>
       {/each}
     </ul>
   </div>

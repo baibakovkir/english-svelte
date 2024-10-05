@@ -28,7 +28,6 @@
   .header__nav {
     justify-content: space-between;
     min-height: 75px;
-
   }
   .header__menu {
     display: none;
@@ -42,7 +41,7 @@
     height: 130vh;
     padding: 0;
     background-color: #f8f8f8;
-    overflow: hidden; 
+    overflow: hidden;
   }
   .header__menu_active {
     display: flex;

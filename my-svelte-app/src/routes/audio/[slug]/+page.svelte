@@ -2,7 +2,6 @@
   export let data;
   import { onMount, onDestroy } from 'svelte';
   import { Howl } from 'howler';
-  import arrowRight from '$lib/assets/arrow-right.svg';
   import LinkAnimated from "../../../components/LinkAnimated.svelte";
 
 

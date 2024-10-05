@@ -36,8 +36,6 @@
 .initial__title_right {
   margin-left: auto;
 }
-
-
 .initial__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -57,11 +55,9 @@
   overflow: hidden;
   cursor: pointer;
 }
-
 .initial__box_audio {
   padding: 0 20px 20px;
 }
-
 .initial__box__text {
   color: #333;
   font-size: 24px;
@@ -71,7 +67,6 @@
   text-align: center;
   margin-top: 20px;
 }
-
 .initial__box__img {
   max-width: 350px;
   filter: grayscale(100%);
@@ -79,11 +74,9 @@
   margin-top: -20px;
   
 }
-
 .initial__box:hover .initial__box__img {
   filter: none; /* Remove the black and white filter on hover */
 }
-
 .initial__box:hover .initial__box__text_yellow {
   color: #eb5e28;
 }

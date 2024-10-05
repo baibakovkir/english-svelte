@@ -6,6 +6,6 @@
 </script>
 
 <section class="text">	
-<LinkAnimated link='/audio/{data.post.slug}' name='Далее'/>
-<embed src={data.post.pdf} type="application/pdf" class="text__pdf" allowfullscreen />
+	<embed src={data.post.pdf} type="application/pdf" class="text__pdf" allowfullscreen />
+	<LinkAnimated name="Вернуться назад" link="javascript:history.back()"/>
 </section>
