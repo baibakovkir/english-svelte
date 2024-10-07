@@ -126,10 +126,124 @@ export const posts = [
 	{
 		title: 'There + to be',
 		slug: 'there-to-be',
+		section1: {
+			text1:
+			'Do you know how to use there is and there are? Test what you know with interactive exercises and read the explanation to help you. Look at these examples to see how we use there is and there are.',
+			example1: 'There`s a very big park in my city.',
+			example2: 'There aren`t any street markets.',
+			text2:'',
+		},
+		table1: ' /col Affirmative col/ ',
+		section2: {
+			text1: ' We use there is to say that something exists or is in a place.',
+			example1: 'There is a bridge in the park.',
+			example2: 'Is there a café near here?',
+		  text2: '',
+		},
+		table2: '',
+		section3: {
+			text1: 'We use there is for singular nouns and there are for plural nouns. We can say there`s instead of there is. We often say this when we speak. But there is no short form for there are.',
+			example1: 'There`s a restaurant in the station.',
+			example2: 'There are two cafés. > NOT: There`re two cafés!!!',
+			text2: 'For negatives, we use there isn`t or there`s not (= there is not) for singular and there aren`t (= there are not) for plural.',
+		},
+		table3: ' /col Negative col/ ',
+		section4: {
+			text1: 'We often use there isn`t a + singular noun, there isn`t any + uncountable noun and there aren`t any + plural noun.',
+			example1: 'There isn`t a café near here.',
+			example2: 'There`s no milk.',
+			text2: 'To show that the negative is important, we also often use there is no + uncountable noun and there are no + plural noun. (It is possible to use there is no + singular noun, but it`s not as common.)',
+		},
+		table4: ' /col /0 affirmative negative negative/20+/20a/any negative/20+/20no question col/  /col singular there`s there/20isn`t there/20isn`t/20a/any/20... 	there/20is/20no/20... Is/20there/20...? col/  /col plural there/20are there/20aren`t there/20aren`t/20any/20... 	there/20are/20no/20... Are/20there/20...? col/ ',
+		tasks: {
+			dragWords: [
+				'Are there any toilets in the park?',
+				'There are no toilets in the park',
+				'But there`s a café and a bank',
+				'There are no restaurants in the station',
+				'There`s a café, a supermarket and a bus stop on my street',
+				'Is there any milk in the fridge?'
+			],
+			correctForm: {
+				box1: 'There',
+				box2: 'to be',
+				sentences: [
+					' /input a good film on channel 2. It starts at 10 o`clock.',
+					' /input haven`t been many entries for the competition yet.',
+					' /input were fire-breathing dragons in the streets yesterday.',
+					' /input are two new students in our class. They`re from Brazil.',
+					' /input so much happening.',
+					' /input anything much going on at the moment?'
+				],
+				answers: [
+					"There's/There`s/There is",
+					'There haven`t/There have not',
+					'There were',
+					'There are',
+					'There`s/There is',
+					'Is there'
+				]
+			}
+		}
 	},
 	{
 		title: 'Сложносочиненные предложения', //https://studfile.net/preview/3682072/page:39/
 		slug: 'compound-sentences',
+		section1: {
+			text1:
+			'Сложносочинённое предложение состоит из равноправных простых предложений (clauses), грамматически независящих друг от друга. Простые предложения (clauses) соединяются сочинительными союзами и обычно отделяются запятой.',
+			example1: 'I caught cold last night, and now I have a sore throat.',
+			example2: 'Я простудился прошлым вечером, и сейчас у меня ангина.',
+			text2:'Сочинительные союзы делятся на простые и составные: and и, а, but но, or или, иначе, as well as так же как (и), both … and и … и, not only … but also не только … но и, either … or или … или,neither … nor ни … ни.',
+		},
+		table1: '',
+		section2: {
+			text1: ' Для соединения независимых предложений служат также наречия: moreover кроме того, сверх того; therefore поэтому; so так, что, и так; however однако; nevertheless тем не менее; still, yet тем не менее, всё же; besides кроме того; otherwise, else, or else в противном случае, иначе.',
+			example1: 'She plays the piano, and her brother plays the guitar.',
+			example2: 'The dog barked, but the cat didn’t seem to care.',
+		  text2: '',
+		},
+		table2: '',
+		section3: {
+			text1: 'Чтобы правильно составить сложное предложение, нужно соблюдать несколько правил:',
+			example1: 'Используйте сочинительный союз или точку с запятой, чтобы соединить два независимых предложения.',
+			example2: 'Независимые предложения должны быть связаны по смыслу и иметь одинаковую важность.',
+			text2: '',
+		},
+		table3: '',
+		section4: {
+			text1: 'Вот несколько распространенных ошибок, которые люди допускают при использовании сложных предложений:',
+			example1: 'Использование запятой в качестве соединительного союза: "I like to read books, my sister prefers to watch movies."',
+			example2: 'Использование бессоюзного предложения: "I like to swim my brother likes to play soccer."',
+			text2: 'Неправильное использование сочинительного союза также является частой ошибкой. "I wanted to go to the park, but it was raining."',
+		},
+		table4: '',
+		tasks: {
+			dragWords: [
+				'I went to the office and completed my lunch',
+				'She bought me a shirt , but I didn’t like its shade',
+				'Rita has returned to Bangalore , so I didn’t meet her.',
+				'She can jump that high – I’ve seen her do it',
+			],
+			correctForm: {
+				box1: 'For And Nor',
+				box2: 'But Or Yet So',
+				sentences: [
+					'Justin was out of sugar, /input he went to the nearby store.',
+					'She wants to lose weight, /input she eats junk every day.',
+					'Shaun is very intelligent, /input he studies too much.',
+					'We wanted to go to France, /input Ray wanted to explore Asia.',
+					'John spent all his savings, /input he cannot travel to Europe with us.'
+				],
+				answers: [
+					"so",
+					'yet/but',
+					'and',
+					'yet/but',
+					'so',
+				]
+			}
+		}
 	},
 	{
 		title: 'Сложноподчиненные предложения',

@@ -237,7 +237,7 @@ onMount(() => {
 		{#if shuffleWords?.length}
 			<div class="initial__tasks__drag-words">
 				<h3 class="initial__tasks__drag-words__title">Перетащите слова в правильное место в предложении</h3>
-				<p class="initial__tasks__drag-words__text">Удержиайте слово и затем перетащите его на новое место</p>
+				<p class="initial__tasks__drag-words__text">Удерживайте слово и затем перетащите его на новое место</p>
 				{#each shuffleWords as phrase, i}
 					<div class="initial__tasks__drag-words__item" data-id={i}>
 						{#each phrase as word, j}
