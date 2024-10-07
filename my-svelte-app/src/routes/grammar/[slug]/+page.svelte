@@ -145,6 +145,9 @@ function handleDrop(event) {
     }
   }
 
+
+
+
 	let phrase = target.parentNode.innerText;
 	// phrase to one line
 	phrase = phrase.replace(/(\r\n|\n|\r)/gm, " ");
@@ -153,6 +156,54 @@ function handleDrop(event) {
 		target.parentNode.classList.add('initial__tasks__drag-words__item_success');
 	}
 }
+
+function handleTouchStart(event) {
+		const target = event.target;
+		const touches = event.touches;
+
+		if (touches.length === 1) {
+			const touch = touches[0];
+			const draggedElementId = target.dataset.id;
+
+			if (draggedElementId) {
+				event.dataTransfer?.setData('text/plain', draggedElementId);
+				target.style.opacity = '0.5';
+			}
+		}
+	}
+
+function handleTouchMove(event) {
+  const target = event.target;
+  const touches = event.touches;
+
+  if (touches.length === 1) {
+    const touch = touches[0];
+    const draggedElementId = event.dataTransfer?.getData('text/plain');
+    const container = target.closest('.initial__tasks__drag-words__item');
+
+    if (draggedElementId && container && container.contains(target)) {
+      const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
+      const draggedElementContainer = draggedDiv?.closest('.initial__tasks__drag-words__item');
+
+      if (draggedDiv && draggedElementContainer === container && target.nodeName === 'DIV' && target !== draggedDiv) {
+        const rect = target.getBoundingClientRect();
+        const targetCenter = rect.top + (rect.height / 2);
+
+        if (touch.clientY < targetCenter) {
+          target.insertAdjacentElement('beforebegin', draggedDiv);
+        } else {
+          target.insertAdjacentElement('afterend', draggedDiv);
+        }
+      }
+    }
+  }
+}
+
+function handleTouchEnd(event) {
+  const target = event.target;
+  target.style.opacity = '1';
+}
+
 
 //correctForm module
 const correctForm = data.post.tasks?.correctForm;
@@ -250,10 +301,9 @@ onMount(() => {
 								on:dragend={handleDragEnd}
 								on:dragstart={handleDragStart}
 								on:drop={handleDrop}
-								on:touchstart={handleDragStart}
-								on:touchmove={handleDragOver}
-								on:touchend={handleDragOver}
-								on:touchcancel={handleDrop}
+								on:touchstart={handleTouchStart}
+								on:touchmove={handleTouchMove}
+								on:touchend={handleTouchEnd}
 								role="link"
 								tabindex="0"
 								class="initial__tasks__drag-words__item__word"
