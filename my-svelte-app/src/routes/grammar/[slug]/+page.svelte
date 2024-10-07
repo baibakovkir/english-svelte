@@ -8,6 +8,8 @@ import { onMount } from 'svelte';
 import LinkAnimated from "../../../components/LinkAnimated.svelte";
 import TextTitle from '../../../components/TextHeaderShine.svelte';
 export let data;
+
+
 function contentToHtml(content) {
 	let res = content
 		.replaceAll(' /n ', '<br>')
@@ -248,6 +250,10 @@ onMount(() => {
 								on:dragend={handleDragEnd}
 								on:dragstart={handleDragStart}
 								on:drop={handleDrop}
+								on:touchstart={handleDragStart}
+								on:touchmove={handleDragOver}
+								on:touchend={handleDragOver}
+								on:touchcancel={handleDrop}
 								role="link"
 								tabindex="0"
 								class="initial__tasks__drag-words__item__word"
