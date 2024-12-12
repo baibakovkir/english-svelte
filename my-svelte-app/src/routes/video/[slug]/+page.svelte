@@ -1,10 +1,12 @@
 <script>
 	export let data;
-
 	const videoLink = data.post.link?.split('v=')[1];
 </script>
 
 <section class="video">
+	<div class="initial__top">
+		<h1 class="initial__title">{data.post.title}</h1>
+	</div>
 	<iframe 
 	class="video__iframe"
 	src="https://www.youtube.com/embed/{videoLink}" 

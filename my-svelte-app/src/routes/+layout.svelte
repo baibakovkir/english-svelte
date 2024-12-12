@@ -1,4 +1,5 @@
 <script>
+  import "../app.css";
   import '$lib/styles/index.css';
   import logo from '$lib/assets/logo.png';
   import Footer from './Footer.svelte';
@@ -18,19 +19,19 @@
   }
 
 </script>
-<div class="header">
+<header class="header">
   <nav class="header__nav nav_burger">
     <a class="header__link" href="/"><img class="header__logo" src="{logo}" alt="ENG" width="30px" height="30px" /></a>
     <ul class="header__menu">
-      <li class="header__menu__item"><a class="header__link" href="/grammar">Грамматика</a></li>
-      <li class="header__menu__item"><a class="header__link" href="/text">Тексты</a></li>
-      <li class="header__menu__item"><a class="header__link" href="/audio">Аудио</a></li>
-      <li class="header__menu__item"><a class="header__link" href="/video">Видео</a></li>
+      <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/grammar">Грамматика</a></li>
+      <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/text">Тексты</a></li>
+      <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/audio">Аудио</a></li>
+      <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/video">Видео</a></li>
       <button type="button" class="header__button header__button__close" on:click={closeMenu}></button>
     </ul>
     <button type="button" class="header__button header__button__burger" on:click={openMenu}></button>
   </nav>
-</div>
+</header>
 <main class="main">
   <slot />
 </main>

@@ -2,11 +2,15 @@
    <title>{data.post.title}</title>
 </svelte:head>
 
-<script lang="ts">
+<script>
 import { shuffle } from 'lodash-es';
-    import { onMount } from 'svelte';
+import { onMount } from 'svelte';
+import LinkAnimated from "../../../components/LinkAnimated.svelte";
+import TextTitle from '../../../components/TextHeaderShine.svelte';
 export let data;
-function contentToHtml(content: string) {
+
+
+function contentToHtml(content) {
 	let res = content
 		.replaceAll(' /n ', '<br>')
 		.replaceAll(' /im ', '<span class="initial__important">')
@@ -15,7 +19,7 @@ function contentToHtml(content: string) {
 		.replaceAll(' it/ ', '</i>');
 	return res;
 }
-function createTable(table: string) {
+function createTable(table) {
   let res = table
     .replaceAll(' /col ', '<div class="initial__about__table__col">')
     .replaceAll(' col/ ', '</div>');
@@ -78,10 +82,10 @@ const content = [
 //tasks logic
 
 const initialWords = data.post.tasks?.dragWords;
-let shuffleWords = [] as string[][];
+let shuffleWords = [];
 
-function handleDragStart(event: DragEvent) {
-  const target = event.target as HTMLElement;
+function handleDragStart(event) {
+  const target = event.target;
   
   // Set the data being dragged
   event.dataTransfer?.setData('text/plain', target.dataset.id ? target.dataset.id : '');
@@ -91,14 +95,14 @@ function handleDragStart(event: DragEvent) {
 }
 
 
-function handleDragOver(event: DragEvent) {
+function handleDragOver(event) {
   event.preventDefault();
-  const target = event.target as HTMLElement;
+  const target = event.target;
   const draggedElementId = event.dataTransfer?.getData('text/plain');
   const container = target.closest('.initial__tasks__drag-words__item');
 
   if (draggedElementId && container && container.contains(target)) {
-    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`) as HTMLElement;
+    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
     const draggedElementContainer = draggedDiv?.closest('.initial__tasks__drag-words__item');
 
     if (draggedDiv && draggedElementContainer === container && target.nodeName === 'DIV' && target !== draggedDiv) {
@@ -114,32 +118,101 @@ function handleDragOver(event: DragEvent) {
   }
 }
 
-function handleDragEnd(event: DragEvent) {
-  const target = event.target as HTMLElement;
+function handleDragEnd(event) {
+  const target = event.target;
   target.style.opacity = '1';
 }
 
-function handleDrop(event: DragEvent) {
+function handleDrop(event) {
   event.preventDefault();
-  const target = event.target as HTMLElement;
+  const target = event.target;
   const draggedElementId = event.dataTransfer?.getData('text/plain');
   
   if (draggedElementId) {
-    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`) as HTMLElement;
+    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
+		const targetPosition = target.getBoundingClientRect();
+		const draggedElementPosition = draggedDiv?.getBoundingClientRect();
 
     if (target.nodeName === 'DIV' && draggedDiv && target !== draggedDiv) {
-      const rect = target.getBoundingClientRect();
-      const targetCenter = rect.top + (rect.height / 2);
+			if (targetPosition.top !== draggedElementPosition.top) {
+			} else {
+				if (targetPosition.left < draggedElementPosition.left) {
+					target.insertAdjacentElement('beforebegin', draggedDiv);
+				} else {
+					target.insertAdjacentElement('afterend', draggedDiv);
+				}
+			}
+    }
+  }
 
-      if (event.clientY < targetCenter) {
-        target.insertAdjacentElement('beforebegin', draggedDiv);
-      } else {
-        target.insertAdjacentElement('afterend', draggedDiv);
+
+
+
+	let phrase = target.parentNode.innerText;
+	// phrase to one line
+	phrase = phrase.replace(/(\r\n|\n|\r)/gm, " ");
+	phrase = phrase.trim();
+	if (initialWords?.includes(phrase)) {
+		target.parentNode.classList.add('initial__tasks__drag-words__item_success');
+	}
+}
+
+function handleTouchStart(event) {
+		const target = event.target;
+		const touches = event.touches;
+
+		if (touches.length === 1) {
+			const touch = touches[0];
+			const draggedElementId = target.dataset.id;
+
+			if (draggedElementId) {
+				event.dataTransfer?.setData('text/plain', draggedElementId);
+				target.style.opacity = '0.5';
+			}
+		}
+	}
+
+function handleTouchMove(event) {
+  const target = event.target;
+  const touches = event.touches;
+
+  if (touches.length === 1) {
+    const touch = touches[0];
+    const draggedElementId = event.dataTransfer?.getData('text/plain');
+    const container = target.closest('.initial__tasks__drag-words__item');
+
+    if (draggedElementId && container && container.contains(target)) {
+      const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
+      const draggedElementContainer = draggedDiv?.closest('.initial__tasks__drag-words__item');
+
+      if (draggedDiv && draggedElementContainer === container && target.nodeName === 'DIV' && target !== draggedDiv) {
+        const rect = target.getBoundingClientRect();
+        const targetCenter = rect.top + (rect.height / 2);
+
+        if (touch.clientY < targetCenter) {
+          target.insertAdjacentElement('beforebegin', draggedDiv);
+        } else {
+          target.insertAdjacentElement('afterend', draggedDiv);
+        }
       }
     }
   }
 }
 
+function handleTouchEnd(event) {
+  const target = event.target;
+  target.style.opacity = '1';
+}
+
+
+//correctForm module
+const correctForm = data.post.tasks?.correctForm;
+const sentences = correctForm?.sentences;
+const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input', '<input type="text" class="initial__tasks__correct-form__input" name="input' + i + '" id="input' + i + '"></input>'));
+const answers = correctForm?.answers;
+
+
+//onMount
 onMount(() => {
 	if (initialWords?.length) {
 		shuffleWords = initialWords?.map(phrase => {
@@ -147,11 +220,11 @@ onMount(() => {
 			 return shufflePhrase;
 		});
 	}
-	const shuffleWordsRes = shuffleWords.map(arr => arr.join(' ')) as string[];
+	const shuffleWordsRes = shuffleWords.map(arr => arr.join(' '));
 
 	const wordsElements = document.querySelectorAll('.initial__tasks__drag-words__item');
 	let phrase = '';
-	function getInnerText(element: HTMLElement) {
+	function getInnerText(element) {
 		phrase = '';
 		element.childNodes.forEach(item => {
 			if (item.nodeType === Node.TEXT_NODE) {
@@ -166,18 +239,27 @@ onMount(() => {
 	wordsElements.forEach(item => {
 		item.addEventListener('drop', getInnerText);
 	});
+	const inputsAnswers = document.querySelectorAll('.initial__tasks__correct-form__input');
 
-	console.log(phrase);
-	console.log(shuffleWordsRes);
-	console.log(initialWords);
+	inputsAnswers.forEach((input, i) => {
+		input.addEventListener('input', () => {
+			const answerOptions = answers[i].split('/');
+			if (answerOptions.includes(input.value)) {
+				input.classList.add('initial__tasks__correct-form__input_success');
+			} else {
+				input.classList.remove('initial__tasks__correct-form__input_success');
+			}
+		});
+	});
 });
 
 
 </script>
 
 <section class="initial">
-	<h1 class="initial__title">{data.post.title}</h1>
-	<div class="initial__about">
+	<LinkAnimated name="Вернуться назад" link="javascript:history.back()"/>
+	<TextTitle title="{data.post.title}"/>
+		<div class="initial__about">
 		{#each content as content, i}
 		<div class="initial__about__wrapper">
 			<p class="initial__about__section-number">{i + 1}</p>
@@ -186,8 +268,12 @@ onMount(() => {
 			{/if}
 			{#if content?.example1}
 			<ul class="initial__about__list">
+				{#if content?.example1}
 				<li class="initial__about__list__item">{@html content.example1}</li>
+				{/if}
+				{#if content?.example2}
 				<li class="initial__about__list__item">{@html content.example2}</li>
+				{/if}
 			</ul>
 			{/if}
 			{#if content?.table}
@@ -201,29 +287,55 @@ onMount(() => {
 	</div>
 	<div class="initial__tasks">
 		<h2 class="initial__tasks__title">Задания</h2>
-		<div class="initial__tasks__drag-words">
-			{#if shuffleWords?.length}
+		{#if shuffleWords?.length}
+			<div class="initial__tasks__drag-words">
+				<h3 class="initial__tasks__drag-words__title">Перетащите слова в правильное место в предложении</h3>
+				<p class="initial__tasks__drag-words__text">Удерживайте слово и затем перетащите его на новое место</p>
 				{#each shuffleWords as phrase, i}
 					<div class="initial__tasks__drag-words__item" data-id={i}>
-						{#each phrase as word}
+						{#each phrase as word, j}
 							<div 
 								draggable="true"
-								data-id={word}
+								data-id={i + '-' + j}
 								on:dragover={handleDragOver}
 								on:dragend={handleDragEnd}
 								on:dragstart={handleDragStart}
 								on:drop={handleDrop}
+								on:touchstart={handleTouchStart}
+								on:touchmove={handleTouchMove}
+								on:touchend={handleTouchEnd}
 								role="link"
 								tabindex="0"
 								class="initial__tasks__drag-words__item__word"
 								aria-grabbed="false"
-							>
-								{word}&nbsp;
-							</div>
+							>{word}</div>
 						{/each}
 					</div>
 				{/each}
-			{/if}
-		</div>
+			</div>
+		{/if}
+		{#if correctForm}
+			<div class="initial__tasks__correct-form">
+				<h3 class="initial__tasks__correct-form__title">Закончите предложения. Используйте слова в нужной форме.</h3>
+				<div class ="initial__tasks__correct-form__boxes">
+					<div class="initial__tasks__correct-form__box">
+						{#each correctForm?.box1?.split(' ') as word}
+							<p class="initial__tasks__correct-form__box__item">{word}</p>
+						{/each}
+					</div>
+					<div class="initial__tasks__correct-form__box">
+						{#each correctForm?.box2?.split(' ') as word}
+							<p class="initial__tasks__correct-form__box__item">{word}</p>
+						{/each}
+					</div>
+				</div>
+				<div class="initial__tasks__correct-form__sentences">
+					{#each renderSentenses as sentence, i}
+						<div class="initial__tasks__correct-form__sentence">{i+1}. {@html sentence}</div>
+					{/each}
+				</div>
+			</div>
+		{/if}
+		<LinkAnimated name="Назад" link="javascript:history.back()"/>
 	</div>
 </section>
