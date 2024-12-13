@@ -6,6 +6,7 @@
   import snow from '$lib/assets/snow.png';
   import TextTitle from '../components/TextHeaderShine.svelte';
   import Meteors from '../components/Meteors.svelte';
+  import Particles from '../components/Particles.svelte';
   
 
   let name = '';
@@ -30,6 +31,7 @@
   class="relative flex flex-col w-full max-w-lg items-center justify-center overflow-hidden"
 >
   <Meteors number={30} />
+  <Particles className="absolute inset-0" refresh={true} />
   <img class="initial__img" src="{logo}" alt="baibakovkir">
   <img class="initial__snow" src="{snow}" alt="Снег">
 </div>
