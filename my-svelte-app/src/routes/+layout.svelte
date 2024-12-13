@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
   import '$lib/styles/index.css';
-  import logo from '$lib/assets/logo.png';
+  import logo from '$lib/assets/logo-cropped.png';
   import Footer from './Footer.svelte';
   function openMenu() {
     const menu = document.querySelector('.header__menu');
@@ -21,7 +21,7 @@
 </script>
 <header class="header">
   <nav class="header__nav nav_burger">
-    <a class="header__link" href="/"><img class="header__logo" src="{logo}" alt="ENG" width="30px" height="30px" /></a>
+    <a class="header__link" href="/"><img class="header__logo" src="{logo}" alt="baibakovkir" /></a>
     <ul class="header__menu">
       <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/grammar">Грамматика</a></li>
       <li class="header__menu__item"><a class="header__link" on:click={closeMenu} href="/text">Тексты</a></li>
