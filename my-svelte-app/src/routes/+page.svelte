@@ -2,8 +2,10 @@
   import englishColor from '$lib/assets/english.avif';
   import spanishColor from '$lib/assets/spanishFlag.avif';
   import codingColor from '$lib/assets/programming.avif';
-  import circles from '$lib/assets/circles.svg';
+  import logo from '$lib/assets/logo.svg';
+  import snow from '$lib/assets/snow.png';
   import TextTitle from '../components/TextHeaderShine.svelte';
+  import Meteors from '../components/Meteors.svelte';
   
 
   let name = '';
@@ -24,7 +26,14 @@
 </script>
 
 <section class="initial">
-<img class="initial__img" src="{circles}" alt="Круги">
+  <div
+  class="relative flex flex-col w-full max-w-lg items-center justify-center overflow-hidden"
+>
+  <Meteors number={30} />
+  <img class="initial__img" src="{logo}" alt="baibakovkir">
+  <img class="initial__snow" src="{snow}" alt="Снег">
+</div>
+
 <TextTitle title="База знаний"/>
 <p class="initial__text">База знаний - это платформа для изучения всего на свете!</p>
 <p class="initial__text">На данный момент доступны курсы:</p>

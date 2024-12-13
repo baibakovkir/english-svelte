@@ -1,3 +1,14 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
 .header {
   width: 100%;
   display: flex;
@@ -22,6 +33,12 @@
 
 .header__button {
   display: none;
+}
+
+.header__logo {
+  background-color: transparent;
+  width: 30px;
+  animation: spin 10s linear infinite;
 }
 
 @media screen and (max-width: 768px) {
