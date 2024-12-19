@@ -212,7 +212,7 @@ onMount(() => {
 		}
 	}
 	wordsElements.forEach(item => {
-		item.addEventListener('drop', getInnerText);
+		item.addEventListener('click', getInnerText);
 	});
 	const inputsAnswers = document.querySelectorAll('.initial__tasks__correct-form__input');
 
