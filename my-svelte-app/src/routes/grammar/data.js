@@ -198,7 +198,7 @@ export const posts = [
 		},
 		table1: '',
 		section2: {
-			text1: ' Для соединения независимых предложений служат также наречия: moreover кроме того, сверх того; therefore поэтому; so так, что, и так; however однако; nevertheless тем не менее; still, yet тем не менее, всё же; besides кроме того; otherwise, else, or else в противном случае, иначе.',
+			text1: 'Для соединения независимых предложений служат также наречия: moreover кроме того, сверх того; therefore поэтому; so так, что, и так; however однако; nevertheless тем не менее; still, yet тем не менее, всё же; besides кроме того; otherwise, else, or else в противном случае, иначе.',
 			example1: 'She plays the piano, and her brother plays the guitar.',
 			example2: 'The dog barked, but the cat didn’t seem to care.',
 		  text2: '',
@@ -222,7 +222,7 @@ export const posts = [
 			dragWords: [
 				'I went to the office and completed my lunch',
 				'She bought me a shirt , but I didn’t like its shade',
-				'Rita has returned to Bangalore , so I didn’t meet her.',
+				'Rita has returned to work , so I didn’t meet her',
 				'She can jump that high – I’ve seen her do it',
 			],
 			correctForm: {
@@ -248,6 +248,54 @@ export const posts = [
 	{
 		title: 'Сложноподчиненные предложения',
 		slug: 'complex-sentences',
+		section1: {
+			text1:
+			'В отличие от сложносочиненных предложений, которые содержат несколько независимых предложений, в состав сложноподчиненных предложений входит только одно независимое предложение и как минимум одно зависимое предложение.',
+			example1: 'While you were sleeping, I went to the store.',
+			example2: 'I went to the store while you were sleeping.',
+			text2:'Ставьте запятую между двумя предложениями только в том случае, если независимое предложение следует за зависимым. Если независимое предложение стоит первым, запятая не ставится.',
+		},
+		table1: '',
+		section2: {
+			text1: 'Придаточное предложение — это любое предложение, которое не может быть самостоятельным. В нём либо отсутствует подлежащее, либо отсутствует глагол, либо оно не выражает законченную мысль.',
+		  text2: '',
+		},
+		table2: '',
+		section3: {
+			text1: 'Чтобы правильно составить сложное предложение, нужно соблюдать несколько правил:',
+			example1: 'Используйте сочинительный союз или точку с запятой, чтобы соединить два независимых предложения.',
+			example2: 'Независимые предложения должны быть связаны по смыслу и иметь одинаковую важность.',
+			text2: 'Подчинительные союзы:',
+		},
+		table4: ' /col because, col/  /col while, col/  /col although, col/  /col if, col/  /col after, col/  /col until, col/  /col which col/  /col when. col/ ',
+		tasks: {
+			dragWords: [
+				'The phone rang while I was studying',
+				'After I finish my work, I will take a break',
+				'If you finish your homework, you can watch TV',
+				'We will have a picnic unless it starts raining',
+			],
+			correctForm: {
+				box1: 'Since (As long as)',
+				box2: 'When If Although',
+				sentences: [
+					'He stayed up late to finish the project /input he was tired.',
+					'I will feed the cat and start dinner /input I get home.',
+					' /input he was feeling sick, he stayed home from work.',
+					' /input you study hard, you will do well on the test.',
+					' /input you need help with your homework, you can ask your teacher for assistance.',
+					' /input she had a lot of work to do, she took a break to go for a walk.'
+				],
+				answers: [
+					'although',
+					'when',
+					'Since/since',
+					'As long as/as long as',
+					'If/if',
+					'Although/although'
+				]
+			}
+		}
 	},
 	{
 		title: 'Условные предложения реального характера (Conditional 1)',

@@ -9,6 +9,27 @@ import LinkAnimated from "../../../components/LinkAnimated.svelte";
 import TextTitle from '../../../components/TextHeaderShine.svelte';
 export let data;
 
+let selectedDiv = null;
+
+function swapDivs(clickedDiv) {
+	if (selectedDiv) {
+			// Swap the innerHTML of the two divs
+			const temp = selectedDiv.innerHTML;
+			selectedDiv.innerHTML = clickedDiv.innerHTML;
+			clickedDiv.innerHTML = temp;
+
+			// Reset selectedDiv to null
+			selectedDiv = null;
+	} else {
+			// Store the clicked div
+			selectedDiv = clickedDiv;
+	}
+}
+
+function handleDivClick(event) {
+	const clickedDiv = event.target;
+	swapDivs(clickedDiv);
+}
 
 function contentToHtml(content) {
 	let res = content
@@ -157,52 +178,7 @@ function handleDrop(event) {
 	}
 }
 
-function handleTouchStart(event) {
-		const target = event.target;
-		const touches = event.touches;
 
-		if (touches.length === 1) {
-			const touch = touches[0];
-			const draggedElementId = target.dataset.id;
-
-			if (draggedElementId) {
-				event.dataTransfer?.setData('text/plain', draggedElementId);
-				target.style.opacity = '0.5';
-			}
-		}
-	}
-
-function handleTouchMove(event) {
-  const target = event.target;
-  const touches = event.touches;
-
-  if (touches.length === 1) {
-    const touch = touches[0];
-    const draggedElementId = event.dataTransfer?.getData('text/plain');
-    const container = target.closest('.initial__tasks__drag-words__item');
-
-    if (draggedElementId && container && container.contains(target)) {
-      const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
-      const draggedElementContainer = draggedDiv?.closest('.initial__tasks__drag-words__item');
-
-      if (draggedDiv && draggedElementContainer === container && target.nodeName === 'DIV' && target !== draggedDiv) {
-        const rect = target.getBoundingClientRect();
-        const targetCenter = rect.top + (rect.height / 2);
-
-        if (touch.clientY < targetCenter) {
-          target.insertAdjacentElement('beforebegin', draggedDiv);
-        } else {
-          target.insertAdjacentElement('afterend', draggedDiv);
-        }
-      }
-    }
-  }
-}
-
-function handleTouchEnd(event) {
-  const target = event.target;
-  target.style.opacity = '1';
-}
 
 
 //correctForm module
@@ -212,7 +188,6 @@ const renderSentenses = sentences.map((sentence, i) => sentence.replace('/input'
 const answers = correctForm?.answers;
 
 
-//onMount
 onMount(() => {
 	if (initialWords?.length) {
 		shuffleWords = initialWords?.map(phrase => {
@@ -251,6 +226,7 @@ onMount(() => {
 			}
 		});
 	});
+
 });
 
 
@@ -289,26 +265,24 @@ onMount(() => {
 		<h2 class="initial__tasks__title">Задания</h2>
 		{#if shuffleWords?.length}
 			<div class="initial__tasks__drag-words">
-				<h3 class="initial__tasks__drag-words__title">Перетащите слова в правильное место в предложении</h3>
-				<p class="initial__tasks__drag-words__text">Удерживайте слово и затем перетащите его на новое место</p>
+				<h3 class="initial__tasks__drag-words__title">Поставьте слова в правильное место в предложении</h3>
+				<p class="initial__tasks__drag-words__text">Нажмите на слово и затем нажмите на слово для замены</p>
 				{#each shuffleWords as phrase, i}
 					<div class="initial__tasks__drag-words__item" data-id={i}>
 						{#each phrase as word, j}
-							<div 
+							<button 
 								draggable="true"
 								data-id={i + '-' + j}
 								on:dragover={handleDragOver}
 								on:dragend={handleDragEnd}
 								on:dragstart={handleDragStart}
 								on:drop={handleDrop}
-								on:touchstart={handleTouchStart}
-								on:touchmove={handleTouchMove}
-								on:touchend={handleTouchEnd}
+								on:click={handleDivClick}
 								role="link"
 								tabindex="0"
 								class="initial__tasks__drag-words__item__word"
 								aria-grabbed="false"
-							>{word}</div>
+							>{word}</button>
 						{/each}
 					</div>
 				{/each}
