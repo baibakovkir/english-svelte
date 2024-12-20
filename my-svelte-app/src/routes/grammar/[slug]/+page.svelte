@@ -12,18 +12,32 @@ export let data;
 let selectedDiv = null;
 
 function swapDivs(clickedDiv) {
-	if (selectedDiv) {
-			// Swap the innerHTML of the two divs
-			const temp = selectedDiv.innerHTML;
-			selectedDiv.innerHTML = clickedDiv.innerHTML;
-			clickedDiv.innerHTML = temp;
+		if (selectedDiv && selectedDiv.parentElement === clickedDiv.parentElement && selectedDiv !== clickedDiv) {
+				const rect1 = selectedDiv.getBoundingClientRect();
+				const rect2 = clickedDiv.getBoundingClientRect();
+				const clickedDivX = rect2.left + rect2.width / 2;
+				clickedDivX > rect1.left + rect1.width / 2
+						? clickedDiv.insertAdjacentElement('afterend', selectedDiv)
+						: clickedDiv.insertAdjacentElement('beforebegin', selectedDiv);
 
-			// Reset selectedDiv to null
+				selectedDiv = null;
+				clickedDiv.blur();
+
+				let phrase = clickedDiv?.parentNode.innerText;
+				phrase = phrase.replace(/(\r\n|\n|\r)/gm, " ");
+				phrase = phrase.trim();
+				console.log(1)
+				if (initialWords?.includes(phrase)) {
+						clickedDiv.parentNode.classList.add('initial__tasks__drag-words__item_success');
+				}
+		} else if (selectedDiv && selectedDiv == clickedDiv) {
 			selectedDiv = null;
-	} else {
-			// Store the clicked div
-			selectedDiv = clickedDiv;
-	}
+			clickedDiv.blur();
+		} 
+		else {
+			console.log(3)
+        selectedDiv = clickedDiv;
+    }
 }
 
 function handleDivClick(event) {
@@ -105,79 +119,6 @@ const content = [
 const initialWords = data.post.tasks?.dragWords;
 let shuffleWords = [];
 
-function handleDragStart(event) {
-  const target = event.target;
-  
-  // Set the data being dragged
-  event.dataTransfer?.setData('text/plain', target.dataset.id ? target.dataset.id : '');
-
-  // Apply additional styling to the dragged element
-  target.style.opacity = '0.5';
-}
-
-
-function handleDragOver(event) {
-  event.preventDefault();
-  const target = event.target;
-  const draggedElementId = event.dataTransfer?.getData('text/plain');
-  const container = target.closest('.initial__tasks__drag-words__item');
-
-  if (draggedElementId && container && container.contains(target)) {
-    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
-    const draggedElementContainer = draggedDiv?.closest('.initial__tasks__drag-words__item');
-
-    if (draggedDiv && draggedElementContainer === container && target.nodeName === 'DIV' && target !== draggedDiv) {
-      const rect = target.getBoundingClientRect();
-      const targetCenter = rect.top + (rect.height / 2);
-
-      if (event.clientY < targetCenter) {
-        target.insertAdjacentElement('beforebegin', draggedDiv);
-      } else {
-        target.insertAdjacentElement('afterend', draggedDiv);
-      }
-    }
-  }
-}
-
-function handleDragEnd(event) {
-  const target = event.target;
-  target.style.opacity = '1';
-}
-
-function handleDrop(event) {
-  event.preventDefault();
-  const target = event.target;
-  const draggedElementId = event.dataTransfer?.getData('text/plain');
-  
-  if (draggedElementId) {
-    const draggedDiv = document.querySelector(`[data-id="${draggedElementId}"]`);
-		const targetPosition = target.getBoundingClientRect();
-		const draggedElementPosition = draggedDiv?.getBoundingClientRect();
-
-    if (target.nodeName === 'DIV' && draggedDiv && target !== draggedDiv) {
-			if (targetPosition.top !== draggedElementPosition.top) {
-			} else {
-				if (targetPosition.left < draggedElementPosition.left) {
-					target.insertAdjacentElement('beforebegin', draggedDiv);
-				} else {
-					target.insertAdjacentElement('afterend', draggedDiv);
-				}
-			}
-    }
-  }
-
-
-
-
-	let phrase = target.parentNode.innerText;
-	// phrase to one line
-	phrase = phrase.replace(/(\r\n|\n|\r)/gm, " ");
-	phrase = phrase.trim();
-	if (initialWords?.includes(phrase)) {
-		target.parentNode.classList.add('initial__tasks__drag-words__item_success');
-	}
-}
-
 
 
 
@@ -214,6 +155,8 @@ onMount(() => {
 	wordsElements.forEach(item => {
 		item.addEventListener('click', getInnerText);
 	});
+
+	
 	const inputsAnswers = document.querySelectorAll('.initial__tasks__correct-form__input');
 
 	inputsAnswers.forEach((input, i) => {
@@ -266,22 +209,16 @@ onMount(() => {
 		{#if shuffleWords?.length}
 			<div class="initial__tasks__drag-words">
 				<h3 class="initial__tasks__drag-words__title">Поставьте слова в правильное место в предложении</h3>
-				<p class="initial__tasks__drag-words__text">Нажмите на слово и затем нажмите на слово для замены</p>
+				<p class="initial__tasks__drag-words__text">Нажмите на слово и затем нажмите на нужное место в предложении</p>
 				{#each shuffleWords as phrase, i}
 					<div class="initial__tasks__drag-words__item" data-id={i}>
 						{#each phrase as word, j}
 							<button 
-								draggable="true"
 								data-id={i + '-' + j}
-								on:dragover={handleDragOver}
-								on:dragend={handleDragEnd}
-								on:dragstart={handleDragStart}
-								on:drop={handleDrop}
 								on:click={handleDivClick}
 								role="link"
 								tabindex="0"
 								class="initial__tasks__drag-words__item__word"
-								aria-grabbed="false"
 							>{word}</button>
 						{/each}
 					</div>

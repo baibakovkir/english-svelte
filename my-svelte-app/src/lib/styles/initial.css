@@ -211,7 +211,6 @@
 }
 
 .initial__tasks__drag-words__item__word {
-  cursor: grab;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 5px 10px;
@@ -225,7 +224,7 @@
   text-align: center;
 }
 
-.initial__tasks__drag-words__item__word:hover {
+.initial__tasks__drag-words__item__word:focus {
   color: var(--flame);
 }
 

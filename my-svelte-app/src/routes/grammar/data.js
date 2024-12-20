@@ -236,7 +236,7 @@ export const posts = [
 					'John spent all his savings, /input he cannot travel to Europe with us.'
 				],
 				answers: [
-					"so",
+					'so',
 					'yet/but',
 					'and',
 					'yet/but',
@@ -300,6 +300,65 @@ export const posts = [
 	{
 		title: 'Условные предложения реального характера (Conditional 1)',
 		slug: 'conditional-1',
+		section1: {
+			text1:
+			'«Если вы будете усердно заниматься, то добьетесь успеха!» — такую фразу студенты слышат довольно часто. Однако за этим высказыванием скрывается не только побуждение к действию, но и важное грамматическое правило в английском языке. Перед вами первый тип условных предложений. Давайте попробуем разобраться, что это такое. Уже из названия становится понятно, что в предложении содержится условие. Результат будет зависеть от того, выполним мы его или нет. А теперь вернемся к нашему предложению.',
+			example1: '«Если вы будете усердно заниматься, …» — это и есть то самое условие.',
+			example2: '«…, то добьетесь успеха!» – а здесь мы видим результат.',
+			text2:'Таким образом, предложение состоит из двух частей: условной — if clause или conditional clause, и основной — main clause. Данный тип условных предложений описывает реальные действия, которые относятся к будущему времени. Однако нужно быть аккуратным при переводе фразы на английский язык. Дело в том, что в условной части нельзя использовать будущее время.',
+		},
+		table1: '',
+		section2: {
+			text1: 'Вместо if в условных предложениях первого типа часто используют when (когда), as soon as (как только), until (пока не), unless (если не), in case (в случае, если):',
+			example1: 'I’ll walk the dog when it stops raining. — Я погуляю с собакой, когда закончится дождь.',
+			example2: 'I’ll call you as soon as I come home. — Я позвоню тебе, как только приду домой.',
+		  text2: 'You won’t get your breakfast unless you wash your face and brush your teeth. — Ты не получишь свой завтрак, если не умоешься и не почистишь зубы. I’ll give you my work number in case my phone is out of battery. — Я дам тебе свой рабочий номер на случай, если батарейка на моем телефоне сядет.',
+		},
+		table2: '',
+		section3: {
+			text1: 'Во второй части предложения употребляется будущие время и глагол will, который в некоторых предложениях можно поменять на can:',
+			example1: 'You can go to this party if you promise to come back before midnight. — Ты можешь пойти на эту вечеринку, если пообещаешь вернуться до полуночи.',
+			example2: 'If you meet Sarah, ask her to come to my office. — Если встретишь Сару, попроси ее зайти ко мне в офис.',
+			text2: 'Вы также можете поменять местами основную и условную части, смысл останется прежним.',
+		},
+		table3: '',
+		section4: {
+			text1: 'Отрицательное предложение строится путем добавления вспомогательного глагола to do в условной части и частички not. Если вы хотите задать вопрос, необходимо преобразовать основную часть:',
+			example1: 'If you don’t work hard, you won’t succeed.',
+			example2: 'Will I succeed if I work hard?',
+			text2: '',
+		},
+		table4: '',
+		tasks: {
+			dragWords: [
+				'If it is raining this evening , I won’t go out',
+				'When I phone Kate , I’ll ask her about the party',
+				'I’ll come as soon as I finish',
+				'You’ll feel better after you have something to eat',
+			],
+			correctForm: {
+				box1: 'accept rain save',
+				box2: 'will leave hurry',
+				sentences: [
+					'If it /input tomorrow, will you stay at home?',
+					'If she calls, /input you answer?',
+					'If you /input , you will miss the train.',
+					'If we /input now, will we make it on time?',
+					'If they /input money, they won’t be able to buy a new house.',
+					'If they offer you the job, will you /input it?',
+					'If you don’t water the plants, they /input survive.'
+				],
+				answers: [
+					'rains',
+					'will',
+					'don’t hurry/dont hurry/do not hurry',
+					'leave',
+					'don’t save',
+					'accept',
+					'will not/won`t/wont',
+				]
+			}
+		}
 	},
 	{
 		title: 'Условные предложения нереального характера (Conditional 2)',
